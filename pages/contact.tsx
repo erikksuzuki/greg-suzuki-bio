@@ -57,10 +57,8 @@ export default function FloorPlansPage() {
                   <h1 className="font-title uppercase tracking-[0.1rem]">
                     Phone Numbers
                   </h1>
-                  +855963465412
-                  <br />
                   +85512990331 <br />
-                  +17026701752
+                  +85512990448 <br />
                   <h1 className="mt-6 font-title uppercase tracking-[0.1rem]">
                     Telegram
                   </h1>
