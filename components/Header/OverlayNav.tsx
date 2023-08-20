@@ -105,7 +105,7 @@ const OverlayNav = ({ isOpen = false, closeOverlay }: OverlayNavProps) => {
             animate={{ opacity: 1 }}
             className="px-7 py-4 mt-auto lg:absolute lg:bottom-8 lg:right-10 text-lazarus-blue-dark"
           >
-            &copy; {currentYear} Lazarus Rooms
+            &copy; {currentYear}
           </motion.p>
         </section>
       </motion.div>

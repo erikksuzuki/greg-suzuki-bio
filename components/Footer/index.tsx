@@ -13,7 +13,7 @@ const Footer = () => {
           <SocialMediaLinks />
         </div>
         <div className="text-lazarus-sm flex flex-row justify-end items-end">
-          &copy; {currentYear} Lazarus Rooms
+          &copy; {currentYear}
         </div>
       </div>
     </section>
