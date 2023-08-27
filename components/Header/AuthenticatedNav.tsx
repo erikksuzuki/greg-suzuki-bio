@@ -1,4 +1,3 @@
-import { SecondaryButton } from '../design-system/Button'
 import { motion, Variants } from 'framer-motion'
 // import { useCurrentUser } from 'lib/hooks/useCurrentUser'
 import Link from 'next/link'
@@ -62,9 +61,7 @@ const AuthenticatedNav = ({
         variants={itemVariant}
         className="mt-2 font-bold text-biography-display-md md:text-biography-display-lg font-['Poppins']"
       >
-        <SecondaryButton className="w-auto" onClick={() => handleLogout()}>
-          Log Out
-        </SecondaryButton>
+        asdf
       </motion.li>
     </motion.ul>
   )

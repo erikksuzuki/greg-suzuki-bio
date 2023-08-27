@@ -1,4 +1,3 @@
-import { SocialMediaLinks } from '../design-system/SocialMediaLinks'
 import { motion } from 'framer-motion'
 // import { useCurrentUser } from 'lib/hooks/useCurrentUser'
 import { useLockBodyScroll } from '../../lib/hooks/useLockBodyScroll'
@@ -95,8 +94,6 @@ const OverlayNav = ({ isOpen = false, closeOverlay }: OverlayNavProps) => {
                   </motion.li>
                 ))}
               </motion.ul>
-
-              <SocialMediaLinks classNames="mt-6 md:mt-8" />
             </div>
           </div>
 
