@@ -18,9 +18,19 @@ const HomePageContent = () => {
         stopping by.
       </p>
       <p className="block mb-8 leading-relaxed">Find Greg Suzuki at: </p>
-      <div className="w-full relative flex flex-row">
-        <img className="w-[100px] relative left-[-6px]" src="/facebook.png" />
-        <img className="w-[100px]" src="/linkedin.png" />
+      <div className="w-full block relative left-[-6px]">
+        <img
+          className="inline-block w-[100px] mr-1"
+          src="/layoutpics/facebook.png"
+        />
+        <img
+          className="inline-block h-[50px] mr-2"
+          src="/layoutpics/socialmdivider.png"
+        />
+        <img
+          className="inline-block w-[100px]"
+          src="/layoutpics/linkedin.png"
+        />
       </div>
     </div>
   )
