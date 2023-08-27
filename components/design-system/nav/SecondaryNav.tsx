@@ -19,8 +19,8 @@ const PROFILE_LINKS = [
 
 const SecondaryNavLink = ({ href, active, children }: any) => {
   const classNames = classnames({
-    'block px-3 py-2 bg-white rounded text-lazarus-gray-600': true,
-    'bg-gray-50 text-lazarus-gray-900': active,
+    'block px-3 py-2 bg-white rounded text-biography-gray-600': true,
+    'bg-gray-50 text-biography-gray-900': active,
   })
 
   return (
@@ -38,10 +38,10 @@ const SecondaryNav = () => {
 
   return (
     <>
-      <nav className="bg-white border-b border-b-lazarus-gray-200">
+      <nav className="bg-white border-b border-b-biography-gray-200">
         <div className={'w-full px-4 md:mx-auto md:max-w-screen-xl md:px-8'}>
           <div className="flex flex-row justify-between items-center">
-            <ul className="flex flex-row justify-start items-center py-3 gap-1 text-lazarus-md font-semibold">
+            <ul className="flex flex-row justify-start items-center py-3 gap-1 text-biography-md font-semibold">
               {links.map(({ href, text }) => (
                 <li key={href}>
                   <SecondaryNavLink active={href === activeHref} href={href}>

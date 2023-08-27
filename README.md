@@ -1,2 +1,2 @@
-The git repository for lazarusrooms™
+The git repository for Greg Suzuki's personal website
 Code goes here

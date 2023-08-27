@@ -29,10 +29,10 @@ const UnAuthenticatedNav = ({
         <motion.li
           variants={itemVariant}
           key={text}
-          className="mt-2 font-bold uppercase tracking-lazarus-title text-lazarus-display-xs md:text-lazarus-display-sm font-title"
+          className="mt-2 font-bold uppercase tracking-biography-title text-biography-display-xs md:text-biography-display-sm font-title"
         >
           <Link
-            className="hover:text-lazarus-blue-base"
+            className="hover:text-biography-blue-base"
             href={href}
             onClick={closeOverlay}
           >

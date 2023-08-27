@@ -60,7 +60,7 @@ const OverlayNav = ({ isOpen = false, closeOverlay }: OverlayNavProps) => {
           className="relative inset-y-0 lg:min-h-[540px] h-full w-full max-w-full flex flex-col overflow-x-auto"
           aria-hidden={isOpen ? 'false' : 'true'}
         >
-          <div className="w-full md:h-full flex flex-col lg:flex-row pt-12 px-10 md:px-20 text-lazarus-blue-dark">
+          <div className="w-full md:h-full flex flex-col lg:flex-row pt-12 px-10 md:px-20 text-biography-blue-dark">
             <div className="mx-auto w-full pl-4 pt-16 mt-8 flex flex-col">
               {2 + 2 === 5 ? (
                 <AuthenticatedNav
@@ -83,11 +83,11 @@ const OverlayNav = ({ isOpen = false, closeOverlay }: OverlayNavProps) => {
                   <motion.li
                     variants={navItem}
                     key={link.text}
-                    className="mt-2 tracking-lazarus-subtitle uppercase text-lazarus-lg md:text-lazarus-display-xs font-subtitle"
+                    className="mt-2 tracking-biography-subtitle uppercase text-biography-lg md:text-biography-display-xs font-subtitle"
                   >
                     <Link
                       href={link.href}
-                      className="hover:text-lazarus-blue-base"
+                      className="hover:text-biography-blue-base"
                       onClick={closeOverlay}
                     >
                       {link.text}
@@ -103,7 +103,7 @@ const OverlayNav = ({ isOpen = false, closeOverlay }: OverlayNavProps) => {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="px-7 py-4 mt-auto lg:absolute lg:bottom-8 lg:right-10 text-lazarus-blue-dark"
+            className="px-7 py-4 mt-auto lg:absolute lg:bottom-8 lg:right-10 text-biography-blue-dark"
           >
             &copy; {currentYear}
           </motion.p>

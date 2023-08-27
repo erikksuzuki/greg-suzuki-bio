@@ -1,4 +1,4 @@
-// import { FreeportLogo } from 'components/icons/lazarus/logo'
+// import { FreeportLogo } from 'components/icons/biography/logo'
 // import { ProfileIcon } from 'components/profile/ProfileIcon'
 import { AnimatePresence } from 'framer-motion'
 // import { useCurrentUser } from '../../lib/hooks/useCurrentUser'
@@ -26,24 +26,24 @@ const Header = () => {
                 <HeaderLogo />
               </div>
               <Link href="/apartments">
-                <button className="pt-1 hidden md:block uppercase text-lazarus-sm font-subtitle text-lazarus-light-teal">
+                <button className="pt-1 hidden md:block uppercase text-biography-sm font-subtitle text-biography-light-teal">
                   Apartments
                 </button>
               </Link>
               <Link href="/contact">
-                <button className="pt-1 hidden md:block uppercase text-lazarus-sm font-subtitle text-lazarus-light-teal">
+                <button className="pt-1 hidden md:block uppercase text-biography-sm font-subtitle text-biography-light-teal">
                   Contact
                 </button>
               </Link>
               <Link href="/about">
-                <button className="pt-1 hidden md:block uppercase text-lazarus-sm font-subtitle text-lazarus-light-teal">
+                <button className="pt-1 hidden md:block uppercase text-biography-sm font-subtitle text-biography-light-teal">
                   About
                 </button>
               </Link>
             </div>
 
             <button
-              className="text-lazarus-blue-dark w-10 h-6 relative focus:outline-none bg-transparent flex self-center"
+              className="text-biography-blue-dark w-10 h-6 relative focus:outline-none bg-transparent flex self-center"
               onClick={onToggleMenu}
               aria-label={open ? 'Close' : 'Open'}
             >
@@ -56,7 +56,7 @@ const Header = () => {
                     open
                       ? '-rotate-45 w-8 rounded-sm h-1.5'
                       : '-translate-y-2 w-10 rounded-md h-[3px]'
-                  } block absolute right-0 bg-lazarus-teal transform transition-all duration-500 ease-in-out`}
+                  } block absolute right-0 bg-biography-teal transform transition-all duration-500 ease-in-out`}
                 />
 
                 <span
@@ -68,7 +68,7 @@ const Header = () => {
                       open
                         ? 'rotate-45 w-8 rounded-sm h-1.5'
                         : 'translate-y-2 w-5 rounded-md left-0 right-0 h-[3px]'
-                    } flex bg-lazarus-teal transform transition-all duration-500 ease-in-out`}
+                    } flex bg-biography-teal transform transition-all duration-500 ease-in-out`}
                   ></span>
                 </span>
 
@@ -76,7 +76,7 @@ const Header = () => {
                   aria-hidden="true"
                   className={`${
                     open ? 'opacity-0' : ''
-                  } block rounded-md absolute h-[3px] w-10 bg-lazarus-teal transform transition-all duration-300 ease-in-out`}
+                  } block rounded-md absolute h-[3px] w-10 bg-biography-teal transform transition-all duration-300 ease-in-out`}
                 />
               </div>
             </button>
@@ -118,18 +118,18 @@ const UserHeader = () => {
 
   return (
     <>
-      <header className="border-b border-b-lazarus-gray-200 bg-transparent lg:bg-white z-40 sticky top-0">
+      <header className="border-b border-b-biography-gray-200 bg-transparent lg:bg-white z-40 sticky top-0">
         <div
           className={`w-full px-4 md:mx-auto md:max-w-screen-xl md:px-8 h-[81px] bg-white lg:bg-transparent lg:py-2 lg:flex lg:flex-row lg:justify-start lg:items-center lg:gap-x-10`}
         >
           <div
-            className={`h-[81px] z-20 py-4 flex items-center justify-between text-lazarus-gray-900`}
+            className={`h-[81px] z-20 py-4 flex items-center justify-between text-biography-gray-900`}
           >
             <Link href="/" className="z-20">
-              Lazarus Rooms
+              Header
             </Link>
             <button
-              className="lg:hidden z-20 text-lazarus-blue-dark w-10 h-6 relative focus:outline-none bg-white flex self-center"
+              className="lg:hidden z-20 text-biography-blue-dark w-10 h-6 relative focus:outline-none bg-white flex self-center"
               onClick={onToggleMenu}
               aria-label={open ? 'Close' : 'Open'}
             >
@@ -173,7 +173,7 @@ const UserHeader = () => {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="block px-4 lg:px-2 py-3 lg:py-1 text-lazarus-gray-900 lg:hover:text-lazarus-gray-600 hover:bg-lazarus-gray-50 lg:hover:bg-inherit text-lazarus-md font-semibold whitespace-nowrap"
+                    className="block px-4 lg:px-2 py-3 lg:py-1 text-biography-gray-900 lg:hover:text-biography-gray-600 hover:bg-biography-gray-50 lg:hover:bg-inherit text-biography-md font-semibold whitespace-nowrap"
                   >
                     {text}
                   </Link>

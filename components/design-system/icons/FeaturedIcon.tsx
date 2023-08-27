@@ -4,9 +4,9 @@ const FeaturedIcon = ({ children, color = 'primary' }: any) => {
   const classNames = classnames(
     'inline-block group-hover:animate-pulse p-2 -ml-2 rounded-full border-8',
     {
-      'border-lazarus-primary-50 bg-lazarus-primary-100 text-lazarus-primary-600':
+      'border-biography-primary-50 bg-biography-primary-100 text-biography-primary-600':
         color === 'primary',
-      'border-lazarus-gray-50 bg-lazarus-gray-100 text-lazarus-gray-600':
+      'border-biography-gray-50 bg-biography-gray-100 text-biography-gray-600':
         color === 'gray',
     }
   )

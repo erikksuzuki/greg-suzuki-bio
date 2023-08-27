@@ -26,7 +26,7 @@ const FormControlInput = ({
       {label && (
         <label
           htmlFor={name}
-          className="text-lazarus-sm font-medium text-lazarus-gray-700"
+          className="text-biography-sm font-medium text-biography-gray-700"
         >
           {label}
         </label>
@@ -34,11 +34,11 @@ const FormControlInput = ({
 
       <input
         className={classNames(
-          'py-2.5 px-4 block w-full bg-white bg-clip-padding border disabled:text-lazarus-gray-500 disabled:bg-lazarus-gray-50 duration-300 transition-shadow transition-colors transition-opacity appearance-none rounded-md text-sm text-lazarus-gray-800 placeholder-lazarus-blue-navy-light shadow-sm focus:shadow-md',
+          'py-2.5 px-4 block w-full bg-white bg-clip-padding border disabled:text-biography-gray-500 disabled:bg-biography-gray-50 duration-300 transition-shadow transition-colors transition-opacity appearance-none rounded-md text-sm text-biography-gray-800 placeholder-biography-blue-navy-light shadow-sm focus:shadow-md',
           {
-            'border-lazarus-blue-lighter focus:border-lazarus-blue-base focus-visible:border-lazarus-blue-base':
+            'border-biography-blue-lighter focus:border-biography-blue-base focus-visible:border-biography-blue-base':
               !error?.length,
-            'border-lazarus-error-500 focus:border-lazarus-error-700':
+            'border-biography-error-500 focus:border-biography-error-700':
               error?.length,
           },
           className
@@ -48,11 +48,11 @@ const FormControlInput = ({
       />
 
       {!error && hint && (
-        <p className="text-lazarus-sm text-lazarus-gray-600">{hint}</p>
+        <p className="text-biography-sm text-biography-gray-600">{hint}</p>
       )}
 
       {error && (
-        <p className="text-lazarus-sm text-lazarus-error-500">{error}</p>
+        <p className="text-biography-sm text-biography-error-500">{error}</p>
       )}
     </div>
   )

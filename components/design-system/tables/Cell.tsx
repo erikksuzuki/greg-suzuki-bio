@@ -6,7 +6,7 @@ type TableRowProps = {
 }
 
 const TableRow = ({ children }: TableRowProps) => {
-  return <tr className="border-t border-lazarus-gray-200">{children}</tr>
+  return <tr className="border-t border-biography-gray-200">{children}</tr>
 }
 
 type TableCellProps = {
@@ -28,12 +28,12 @@ const LeadTableCell = ({
   })
 
   return (
-    <td className={`px-6 py-4 h-[72px] text-lazarus-gray-900 ${classNames}`}>
+    <td className={`px-6 py-4 h-[72px] text-biography-gray-900 ${classNames}`}>
       {text && (
-        <p className="text-sm font-semibold text-lazarus-gray-900">{text}</p>
+        <p className="text-sm font-semibold text-biography-gray-900">{text}</p>
       )}
       {supportingText && (
-        <p className="text-sm font-normal text-lazarus-gray-600">
+        <p className="text-sm font-normal text-biography-gray-600">
           {supportingText}
         </p>
       )}
@@ -51,12 +51,12 @@ const TableCell = ({
     'text-right': align === 'right',
   })
   return (
-    <td className={`px-6 py-4 h-[72px] text-lazarus-gray-900 ${classNames}`}>
+    <td className={`px-6 py-4 h-[72px] text-biography-gray-900 ${classNames}`}>
       {text && (
-        <p className="text-sm font-normal text-lazarus-gray-900">{text}</p>
+        <p className="text-sm font-normal text-biography-gray-900">{text}</p>
       )}
       {supportingText && (
-        <p className="text-sm font-normal text-lazarus-gray-600">
+        <p className="text-sm font-normal text-biography-gray-600">
           {supportingText}
         </p>
       )}
@@ -79,7 +79,7 @@ const TableCellBadge = ({ text, color = 'gray' }: TableCellBadgeProps) => {
 
 const TableCellWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
-    <td className="px-6 py-4 h-[72px] text-sm font-normal text-lazarus-gray-600">
+    <td className="px-6 py-4 h-[72px] text-sm font-normal text-biography-gray-600">
       {children}
     </td>
   )

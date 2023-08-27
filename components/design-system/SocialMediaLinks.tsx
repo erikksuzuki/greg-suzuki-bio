@@ -22,7 +22,7 @@ interface InnerLinksProps {
 
 const SocialMediaLinks = ({
   classNames,
-  innerLinksClassNames = 'hover:text-lazarus-blue-base',
+  innerLinksClassNames = 'hover:text-biography-blue-base',
 }: SocialMediaLinksProps) => {
   const SOCIAL_LINKS = [
     {
@@ -32,12 +32,12 @@ const SocialMediaLinks = ({
     },
     {
       text: 'Contact us on Telegram',
-      href: 'https://t.me/lazarusrooms',
+      href: 'https://t.me/biographyrooms',
       glyph: <Telegram className="w-[26px] h-[26px]" />,
     },
     {
       text: 'Contact us via e-mail',
-      href: 'mailto: info@lazarusrooms.com',
+      href: 'mailto: info@biographyrooms.com',
       glyph: <MailIcon className="w-[26px] h-[26px]" />,
     },
   ]

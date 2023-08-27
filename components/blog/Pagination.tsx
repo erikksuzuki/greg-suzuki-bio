@@ -9,10 +9,10 @@ interface PaginationNumber {
 }
 const NumberButton = ({ number, selected, urlPrefix }: PaginationNumber) => {
   const numberBaseClass =
-    'w-10 h-10 cursor-pointer flex items-center justify-center text-lazarus-sm rounded-full font-medium'
+    'w-10 h-10 cursor-pointer flex items-center justify-center text-biography-sm rounded-full font-medium'
   const selectedConditionalClass = selected
-    ? 'bg-lazarus-gray-50 hover:bg-lazarus-gray-100 font-semibold'
-    : 'hover:bg-lazarus-gray-100'
+    ? 'bg-biography-gray-50 hover:bg-biography-gray-100 font-semibold'
+    : 'hover:bg-biography-gray-100'
   return (
     <Link href={urlPrefix + number} className={`${selected && 'disabled'}`}>
       <div className={`${numberBaseClass} ${selectedConditionalClass}`}>
@@ -27,12 +27,12 @@ interface PaginationArrow {
   linkUrl: string
 }
 const previousNextBaseClass =
-  'border rounded-lg sm:border-0 w-9 sm:w-auto h-9 sm:h-10 flex items-center justify-center font-semibold items-center justify-center text-lazarus-sm'
+  'border rounded-lg sm:border-0 w-9 sm:w-auto h-9 sm:h-10 flex items-center justify-center font-semibold items-center justify-center text-biography-sm'
 
 const BackButton = ({ disabled = false, linkUrl }: PaginationArrow) => {
   const disabledConditionalClass = disabled
-    ? 'text-lazarus-gray-400 border-lazarus-gray-300'
-    : 'cursor-pointer text-lazarus-gray-900 sm:text-lazarus-gray-600 hover:text-lazarus-primary-600 border-lazarus-gray-400 hover:border-lazarus-primary-600'
+    ? 'text-biography-gray-400 border-biography-gray-300'
+    : 'cursor-pointer text-biography-gray-900 sm:text-biography-gray-600 hover:text-biography-primary-600 border-biography-gray-400 hover:border-biography-primary-600'
   return (
     <Link href={linkUrl} className={`${disabled && 'disabled'}`}>
       <div className={`${previousNextBaseClass} ${disabledConditionalClass}`}>
@@ -44,8 +44,8 @@ const BackButton = ({ disabled = false, linkUrl }: PaginationArrow) => {
 }
 const ForwardButton = ({ disabled = false, linkUrl }: PaginationArrow) => {
   const disabledConditionalClass = disabled
-    ? 'text-lazarus-gray-400 border-lazarus-gray-300'
-    : 'cursor-pointer text-lazarus-gray-900 sm:text-lazarus-gray-600 hover:text-lazarus-primary-600 border-lazarus-gray-400 hover:border-lazarus-primary-600'
+    ? 'text-biography-gray-400 border-biography-gray-300'
+    : 'cursor-pointer text-biography-gray-900 sm:text-biography-gray-600 hover:text-biography-primary-600 border-biography-gray-400 hover:border-biography-primary-600'
   return (
     <Link href={linkUrl} className={`${disabled && 'disabled'}`}>
       <div className={`${previousNextBaseClass} ${disabledConditionalClass}`}>
@@ -95,7 +95,7 @@ const PaginationSection = ({
             />
           )
         })}
-        <div className="w-10 h-10 flex items-center justify-center text-lazarus-sm rounded-full font-medium">
+        <div className="w-10 h-10 flex items-center justify-center text-biography-sm rounded-full font-medium">
           ...
         </div>
         {fullPageArray.slice(-3).map((index) => {
@@ -113,7 +113,7 @@ const PaginationSection = ({
   }
   const PageLocationText = () => {
     return (
-      <div className="text-lazarus-sm text-lazarus-gray-700">
+      <div className="text-biography-sm text-biography-gray-700">
         Page <span className="font-bold">{currentPage}</span> of{' '}
         <span className="font-bold">{pageCount}</span>
       </div>

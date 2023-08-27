@@ -14,20 +14,20 @@ interface Badge {
   // icon?: 'dot' | 'country' | 'avatar' | 'close' | 'arrow-back' | 'arrow-forward'
 }
 const badgeColors: any = {
-  gray: 'bg-lazarus-gray-50 text-lazarus-gray-700',
-  primary: 'bg-lazarus-primary-50 text-lazarus-primary-700',
-  error: 'bg-lazarus-error-50 text-lazarus-error-700',
-  pink: 'bg-lazarus-pink-50 text-lazarus-pink-700',
-  orange: 'bg-lazarus-orange-50 text-lazarus-orange-700',
-  green: 'bg-lazarus-success-50 text-lazarus-success-700',
-  indigo: 'bg-lazarus-indigo-50 text-lazarus-indigo-700',
+  gray: 'bg-biography-gray-50 text-biography-gray-700',
+  primary: 'bg-biography-primary-50 text-biography-primary-700',
+  error: 'bg-biography-error-50 text-biography-error-700',
+  pink: 'bg-biography-pink-50 text-biography-pink-700',
+  orange: 'bg-biography-orange-50 text-biography-orange-700',
+  green: 'bg-biography-success-50 text-biography-success-700',
+  indigo: 'bg-biography-indigo-50 text-biography-indigo-700',
   yellow: 'bg-yellow-50 text-yellow-600',
 }
 
 const Badge = ({ label, color = 'gray' }: Badge) => {
   return (
     <div
-      className={`inline-block rounded-full ${badgeColors[color]} py-[2px] px-[10px] text-lazarus-sm font-semibold capitalize`}
+      className={`inline-block rounded-full ${badgeColors[color]} py-[2px] px-[10px] text-biography-sm font-semibold capitalize`}
     >
       {label}
     </div>

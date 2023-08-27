@@ -73,25 +73,27 @@ const InputField = ({
   return (
     <div className={className}>
       {label && (
-        <label className="text-lazarus-sm font-medium text-lazarus-gray-700 pb-1.5">
+        <label className="text-biography-sm font-medium text-biography-gray-700 pb-1.5">
           {label}
         </label>
       )}
       {textArea ? (
         <textarea
-          className="px-[13px] py-[9px] bg-white text-lazarus-md text-lazarus-gray-900 placeholder-lazarus-gray-500 border border-1 border-lazarus-gray-300 rounded w-full shadow-sm focus:shadow-md focus:border-lazarus-primary-300 disabled:text-lazarus-gray-500 disabled:bg-lazarus-gray-50"
+          className="px-[13px] py-[9px] bg-white text-biography-md text-biography-gray-900 placeholder-biography-gray-500 border border-1 border-biography-gray-300 rounded w-full shadow-sm focus:shadow-md focus:border-biography-primary-300 disabled:text-biography-gray-500 disabled:bg-biography-gray-50"
           {...reactHookFormProps}
           {...rest}
         />
       ) : (
         <input
-          className="px-[13px] py-[9px] bg-white text-lazarus-md text-lazarus-gray-900 placeholder-lazarus-gray-500 border border-1 border-lazarus-gray-300 rounded w-full shadow-sm focus:shadow-md focus:border-lazarus-primary-300 disabled:text-lazarus-gray-500 disabled:bg-lazarus-gray-50"
+          className="px-[13px] py-[9px] bg-white text-biography-md text-biography-gray-900 placeholder-biography-gray-500 border border-1 border-biography-gray-300 rounded w-full shadow-sm focus:shadow-md focus:border-biography-primary-300 disabled:text-biography-gray-500 disabled:bg-biography-gray-50"
           {...reactHookFormProps}
           {...rest}
         />
       )}
       {error && (
-        <p className="pt-1.5 text-lazarus-sm text-lazarus-error-500">{error}</p>
+        <p className="pt-1.5 text-biography-sm text-biography-error-500">
+          {error}
+        </p>
       )}
     </div>
   )
@@ -187,14 +189,14 @@ export default function EmailForm() {
         </div>
         <div className="col-span-2">
           <button
-            className="block w-full rounded-md py-3 font-subtitle uppercase text-lazarus-sm shadow-md bg-lazarus-light-teal text-white"
+            className="block w-full rounded-md py-3 font-subtitle uppercase text-biography-sm shadow-md bg-biography-light-teal text-white"
             type="submit"
           >
             {isLoading ? <Spinner /> : 'Send Email'}
           </button>
         </div>
         {isSubmitted && (
-          <div className="col-span-2 text-lazarus-sm text-lazarus-success-800">
+          <div className="col-span-2 text-biography-sm text-biography-success-800">
             Thank you for submitting your enquiry! Our team will review it as
             soon as possible. If you don't hear back from us within 24 hours,
             feel free to reach out to us using one of our phone numbers.

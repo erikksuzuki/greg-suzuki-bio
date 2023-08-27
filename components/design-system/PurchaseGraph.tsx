@@ -17,10 +17,10 @@ const PurchaseGraph = ({
   const maxPurchaseReached = supply_buying >= supply - supply_sold
 
   return (
-    <div className="relative w-full h-3 rounded-full bg-lazarus-primary-100 mt-2">
+    <div className="relative w-full h-3 rounded-full bg-biography-primary-100 mt-2">
       <div className="flex flex-row justify-start items-start rounded-full overflow-hidden">
         <div
-          className="h-3 bg-lazarus-primary-600"
+          className="h-3 bg-biography-primary-600"
           style={{ width: soldPercentage }}
         />
         <div

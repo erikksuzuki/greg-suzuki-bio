@@ -35,16 +35,16 @@ const CategoryLabels = ({ postTags }: { postTags: postTag[] }) => {
   console.log(process.env.NEXT_PUBLIC_CONTENTFUL_PREVIEW_ACCESS_TOKEN)
 
   const labelColor: any = {
-    gray: 'text-lazarus-gray-700',
-    primary: 'text-lazarus-primary-700',
-    error: 'text-lazarus-error-700',
-    pink: 'text-lazarus-pink-700',
-    orange: 'text-lazarus-orange-700',
-    green: 'text-lazarus-success-700',
-    indigo: 'text-lazarus-indigo-700',
+    gray: 'text-biography-gray-700',
+    primary: 'text-biography-primary-700',
+    error: 'text-biography-error-700',
+    pink: 'text-biography-pink-700',
+    orange: 'text-biography-orange-700',
+    green: 'text-biography-success-700',
+    indigo: 'text-biography-indigo-700',
   }
   return (
-    <div className="mb-3 text-lazarus-sm font-semibold capitalize">
+    <div className="mb-3 text-biography-sm font-semibold capitalize">
       {postTags.map((tag: postTag, index: number) => {
         const color = customTagColors[tag.sys.id] ?? randomTagColor()
         const comma = index !== postTags.length - 1 ? ', ' : ''
@@ -76,7 +76,7 @@ const PostLink = (post: PostProps) => {
             <PostThumbnail {...findHeaderImage(post)} />
             <CategoryLabels postTags={post.metadata.tags} />
             <div className="relative mb-2">
-              <h1 className="text-lazarus-display-xs font-semibold mr-10">
+              <h1 className="text-biography-display-xs font-semibold mr-10">
                 {post.fields.title}
               </h1>
               <LinkArrowSmall className="w-5 h-5 absolute top-2 right-1" />
@@ -89,7 +89,7 @@ const PostLink = (post: PostProps) => {
       <section className="pt-6">
         <AvatarLabelGroup
           avatarUrl={avatarUrl}
-          text={post.fields.author.fields?.name ?? 'lazarus'}
+          text={post.fields.author.fields?.name ?? 'biography'}
           supportingText={postedAt ? formatDate(postedAt, true) : ''}
         />
       </section>

@@ -22,7 +22,7 @@ const HeaderCell = ({ text, align = 'center' }: HeaderCellProps) => {
   })
   return (
     <th
-      className={`px-6 py-3 text-xs font-semibold text-lazarus-gray-600 ${classNames}`}
+      className={`px-6 py-3 text-xs font-semibold text-biography-gray-600 ${classNames}`}
     >
       {text}
     </th>
@@ -31,7 +31,7 @@ const HeaderCell = ({ text, align = 'center' }: HeaderCellProps) => {
 
 const HeaderRow = ({ children }: { children: React.ReactNode }) => {
   return (
-    <thead className="rounded-t-xl bg-lazarus-gray-50">
+    <thead className="rounded-t-xl bg-biography-gray-50">
       <tr>{children}</tr>
     </thead>
   )

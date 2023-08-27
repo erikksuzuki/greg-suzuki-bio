@@ -22,14 +22,14 @@ const InviteRequestOption = ({ classNames, toggleDrawer }: Props) => {
       exit="exit"
       variants={inviteReqVariant}
     >
-      <div className="flex flex-row items-center gap-2 text-lazarus-blue-dark justify-between">
+      <div className="flex flex-row items-center gap-2 text-biography-blue-dark justify-between">
         <div className="text-sm text-center font-['Poppins']">
           The Warhol Collection launches May 10th.
         </div>
 
         <button
           onClick={toggleDrawer}
-          className="px-6 py-2 text-sm font-medium bg-lazarus-blue-base text-white backface-visibility-hidden whitespace-nowrap flex flex-1 justify-center transform items-center rounded-full transition hover:scale-105 focus:outline-none active:bg-opacity-80 w-auto rounded-full shadow-sm"
+          className="px-6 py-2 text-sm font-medium bg-biography-blue-base text-white backface-visibility-hidden whitespace-nowrap flex flex-1 justify-center transform items-center rounded-full transition hover:scale-105 focus:outline-none active:bg-opacity-80 w-auto rounded-full shadow-sm"
         >
           Join waitlist
         </button>

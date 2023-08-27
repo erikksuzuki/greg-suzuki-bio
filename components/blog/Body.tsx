@@ -31,7 +31,7 @@ const Body = ({ body, truncate, postHeroImage }: BodyProps) => {
     ? truncatedBody(body)
     : renderContentfulDocument(body, ContentfulFontSize.Blog, postHeroImage)
   return (
-    <section className="post-content mx-auto max-w-[720px] text-lazarus-gray-600">
+    <section className="post-content mx-auto max-w-[720px] text-biography-gray-600">
       {content}
     </section>
   )

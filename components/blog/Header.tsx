@@ -42,14 +42,14 @@ const Header = ({
   const postedAt = publishedAt || createdAt
   return (
     <header className="py-24">
-      <p className="text-lazarus-sm md:text-lazarus-md font-semibold text-lazarus-primary-600 text-center mb-3">
+      <p className="text-biography-sm md:text-biography-md font-semibold text-biography-primary-600 text-center mb-3">
         Published <time dateTime={postedAt}>{formatDate(postedAt, true)}</time>
       </p>
-      <h1 className="text-lazarus-display-md md:text-lazarus-display-lg tracking-lazarus-lg font-semibold max-w-4xl text-center mx-auto mb-6 ">
+      <h1 className="text-biography-display-md md:text-biography-display-lg tracking-biography-lg font-semibold max-w-4xl text-center mx-auto mb-6 ">
         {title}
       </h1>
       {subtitle && (
-        <h2 className="text-lazarus-lg md:text-lazarus-xl font-normal text-lazarus-gray-600 text-center">
+        <h2 className="text-biography-lg md:text-biography-xl font-normal text-biography-gray-600 text-center">
           {subtitle}
         </h2>
       )}

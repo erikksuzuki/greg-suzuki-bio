@@ -20,35 +20,39 @@ const InputWithLabel = ({
   return (
     <div className={className}>
       {label && (
-        <label className="text-lazarus-sm font-medium text-lazarus-gray-700 pb-1.5">
+        <label className="text-biography-sm font-medium text-biography-gray-700 pb-1.5">
           {label}
         </label>
       )}
       <input
-        className="px-[13px] py-[9px] bg-white text-lazarus-md text-lazarus-gray-900 placeholder-lazarus-gray-500 border border-1 border-lazarus-gray-300 rounded w-full shadow-sm focus:shadow-md focus:border-lazarus-primary-300 disabled:text-lazarus-gray-500 disabled:bg-lazarus-gray-50"
+        className="px-[13px] py-[9px] bg-white text-biography-md text-biography-gray-900 placeholder-biography-gray-500 border border-1 border-biography-gray-300 rounded w-full shadow-sm focus:shadow-md focus:border-biography-primary-300 disabled:text-biography-gray-500 disabled:bg-biography-gray-50"
         {...reactHookFormProps}
         {...rest}
       />
       {!error && hint && (
-        <p className="pt-1.5 text-lazarus-sm text-lazarus-gray-600">{hint}</p>
+        <p className="pt-1.5 text-biography-sm text-biography-gray-600">
+          {hint}
+        </p>
       )}
       {error && (
-        <p className="pt-1.5 text-lazarus-sm text-lazarus-error-500">{error}</p>
+        <p className="pt-1.5 text-biography-sm text-biography-error-500">
+          {error}
+        </p>
       )}
     </div>
     // <div className={className}>
     //   {label && (
-    //     <label className="text-lazarus-sm font-medium text-lazarus-gray-700 pb-1.5">
+    //     <label className="text-biography-sm font-medium text-biography-gray-700 pb-1.5">
     //       {label}
     //     </label>
     //   )}
     // <input
-    //   className="px-3 py-2 bg-white text-lazarus-md text-lazarus-gray-900 placeholder-lazarus-gray-500 border border-1 border-lazarus-gray-300 rounded w-full shadow-sm focus:shadow-md"
+    //   className="px-3 py-2 bg-white text-biography-md text-biography-gray-900 placeholder-biography-gray-500 border border-1 border-biography-gray-300 rounded w-full shadow-sm focus:shadow-md"
     //   {...register(name)}
     //   {...rest}
     // />
     // {hint && (
-    //   <p className="px-1 pt-1.5 text-lazarus-xs text-lazarus-gray-600">
+    //   <p className="px-1 pt-1.5 text-biography-xs text-biography-gray-600">
     //     {hint}
     //   </p>
     // )}

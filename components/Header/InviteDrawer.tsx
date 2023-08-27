@@ -19,7 +19,7 @@ const InviteDrawer = ({ toggleDrawer, isOpen }: InviteDrawerProps) => {
         initial="closed"
         exit="exit"
         variants={backdropVariant}
-        className="z-40 fixed inset-0 bg-lazarus-blue-new"
+        className="z-40 fixed inset-0 bg-biography-blue-new"
         onClick={toggleDrawer}
       />
 
@@ -45,10 +45,10 @@ const InviteDrawer = ({ toggleDrawer, isOpen }: InviteDrawerProps) => {
             />
           </div>
 
-          <div className="mt-8 text-lazarus-blue-new text-2xl font-bold tracking-tighter">
+          <div className="mt-8 text-biography-blue-new text-2xl font-bold tracking-tighter">
             Request an invite
           </div>
-          <div className="mt-4 text-lazarus-blue-navy tracking-tighte">
+          <div className="mt-4 text-biography-blue-navy tracking-tighte">
             Reserve your place on the waitlist and stay up to date with the
             latest news, announcements, and articles.
           </div>

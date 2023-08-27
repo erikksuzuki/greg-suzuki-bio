@@ -14,7 +14,7 @@ const WizardProgressStep = ({
 const CompleteStep = ({ onClick }: any) => {
   return (
     <button
-      className="rounded-full p-1 border-2 border-lazarus-primary-100 bg-lazarus-primary-50 text-lazarus-primary-600"
+      className="rounded-full p-1 border-2 border-biography-primary-100 bg-biography-primary-50 text-biography-primary-600"
       onClick={onClick}
     >
       <SmallCheckIcon className="w-5 h-5" />
@@ -25,10 +25,10 @@ const CompleteStep = ({ onClick }: any) => {
 const IncompleteStep = ({ onClick }: any) => {
   return (
     <button
-      className="rounded-full p-2.5 border-2 border-lazarus-gray-100 bg-lazarus-gray-50"
+      className="rounded-full p-2.5 border-2 border-biography-gray-100 bg-biography-gray-50"
       onClick={onClick}
     >
-      <i className="block rounded-full w-2 h-2 bg-lazarus-gray-400" />
+      <i className="block rounded-full w-2 h-2 bg-biography-gray-400" />
     </button>
   )
 }
@@ -36,10 +36,10 @@ const IncompleteStep = ({ onClick }: any) => {
 const ActiveStep = ({ onClick }: any) => {
   return (
     <button
-      className="inline-block p-3 rounded-full border-4 border-lazarus-primary-50 bg-lazarus-primary-100 text-lazarus-primary-600"
+      className="inline-block p-3 rounded-full border-4 border-biography-primary-50 bg-biography-primary-100 text-biography-primary-600"
       onClick={onClick}
     >
-      <i className="block rounded-full w-2 h-2 bg-lazarus-primary-600" />
+      <i className="block rounded-full w-2 h-2 bg-biography-primary-600" />
     </button>
   )
 }
@@ -75,10 +75,10 @@ const ProgressCircle = ({
   label: string
 }) => (
   <div className="ml-[-1px] mr-[-1px] flex items-center flex-col z-10">
-    <div className="text-lg text-lazarus-gray-600">{label}</div>
+    <div className="text-lg text-biography-gray-600">{label}</div>
     <div
       className={`w-6 h-6 ${
-        active ? 'bg-lazarus-primary-600' : 'bg-lazarus-gray-200'
+        active ? 'bg-biography-primary-600' : 'bg-biography-gray-200'
       } mx-auto rounded-full flex items-center`}
     />
   </div>
@@ -89,7 +89,7 @@ const ProgressLine = ({ active }: { active?: boolean }) => (
     <div className="w-full bg-grey-light items-center align-middle align-center flex-1">
       <div
         className={`w-full ${
-          active ? 'bg-lazarus-primary-600' : 'bg-lazarus-gray-200'
+          active ? 'bg-biography-primary-600' : 'bg-biography-gray-200'
         } text-xs leading-none py-1 text-center text-grey-darkest`}
       />
     </div>

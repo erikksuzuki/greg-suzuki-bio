@@ -29,10 +29,10 @@ const AvatarLabelGroup = ({
           <Avatar />
         </div>
         <div className="flex flex-col">
-          <p className="text-lazarus-sm font-semibold text-lazarus-gray-900">
+          <p className="text-biography-sm font-semibold text-biography-gray-900">
             {text}
           </p>
-          <p className="text-lazarus-sm text-lazarus-gray-600">
+          <p className="text-biography-sm text-biography-gray-600">
             {supportingText}
           </p>
         </div>

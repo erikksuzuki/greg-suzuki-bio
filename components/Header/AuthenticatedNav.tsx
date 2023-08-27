@@ -47,10 +47,10 @@ const AuthenticatedNav = ({
         <motion.li
           variants={itemVariant}
           key={text}
-          className="mt-2 font-bold  text-lazarus-display-lg font-['Poppins']"
+          className="mt-2 font-bold  text-biography-display-lg font-['Poppins']"
         >
           <Link
-            className="hover:text-lazarus-blue-base"
+            className="hover:text-biography-blue-base"
             href={href}
             onClick={closeOverlay}
           >
@@ -60,7 +60,7 @@ const AuthenticatedNav = ({
       ))}
       <motion.li
         variants={itemVariant}
-        className="mt-2 font-bold text-lazarus-display-md md:text-lazarus-display-lg font-['Poppins']"
+        className="mt-2 font-bold text-biography-display-md md:text-biography-display-lg font-['Poppins']"
       >
         <SecondaryButton className="w-auto" onClick={() => handleLogout()}>
           Log Out

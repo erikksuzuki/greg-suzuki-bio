@@ -49,31 +49,31 @@ const AutocompleteField = ({
     >
       <div className="relative">
         {label && (
-          <Combobox.Label className="text-lazarus-sm font-medium text-lazarus-gray-700">
+          <Combobox.Label className="text-biography-sm font-medium text-biography-gray-700">
             {label}
           </Combobox.Label>
         )}
-        <div className="flex space-between px-[13px] py-[9px] bg-white text-lazarus-md text-lazarus-gray-900 placeholder-lazarus-gray-500 border border-1 border-lazarus-gray-300 rounded w-full shadow-sm focus-within:shadow-md focus-within:border-lazarus-primary-500 focus-within:border-2 focus-within:-m-[1px] disabled:text-lazarus-gray-500 disabled:bg-lazarus-gray-50">
+        <div className="flex space-between px-[13px] py-[9px] bg-white text-biography-md text-biography-gray-900 placeholder-biography-gray-500 border border-1 border-biography-gray-300 rounded w-full shadow-sm focus-within:shadow-md focus-within:border-biography-primary-500 focus-within:border-2 focus-within:-m-[1px] disabled:text-biography-gray-500 disabled:bg-biography-gray-50">
           <Combobox.Input
             onChange={(event) => setQuery(event.target.value)}
             displayValue={(item: any) => item.name}
-            className="flex-grow outline-none appearance-none placeholder:font-normal placeholder-lazarus-gray-500"
+            className="flex-grow outline-none appearance-none placeholder:font-normal placeholder-biography-gray-500"
             placeholder={placeholder}
             autoComplete="off"
           />
           <Combobox.Button>
-            <ChevronDownIcon className="block w-5 h-5 text-lazarus-gray-500" />
+            <ChevronDownIcon className="block w-5 h-5 text-biography-gray-500" />
           </Combobox.Button>
         </div>
         <Combobox.Options>
-          <div className="absolute w-full mt-1 max-h-60 overflow-auto border border-lazarus-gray-200 shadow-md rounded-xl">
+          <div className="absolute w-full mt-1 max-h-60 overflow-auto border border-biography-gray-200 shadow-md rounded-xl">
             {filteredData.map((item) => (
               <Combobox.Option
                 key={item.name}
                 value={item}
                 className={({ active }) =>
-                  `px-[13px] py-[11px] flex flex-row gap-2 justify-between items-center text-lazarus-text-md font-medium ${
-                    active ? 'bg-lazarus-primary-50' : 'bg-white'
+                  `px-[13px] py-[11px] flex flex-row gap-2 justify-between items-center text-biography-text-md font-medium ${
+                    active ? 'bg-biography-primary-50' : 'bg-white'
                   }`
                 }
               >
@@ -82,7 +82,7 @@ const AutocompleteField = ({
                     <span>{item.name}</span>
                     {selected && (
                       <CheckIcon
-                        className="h-5 w-5 text-lazarus-primary-600"
+                        className="h-5 w-5 text-biography-primary-600"
                         aria-hidden="true"
                       />
                     )}

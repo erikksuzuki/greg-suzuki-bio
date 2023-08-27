@@ -56,19 +56,21 @@ const InputDateWithLabel = ({
   return (
     <div className={className}>
       {label && (
-        <label className="text-lazarus-sm font-medium text-lazarus-gray-700 pb-1.5">
+        <label className="text-biography-sm font-medium text-biography-gray-700 pb-1.5">
           {label}
         </label>
       )}
       <input
-        className="px-[13px] py-[9px] bg-white text-lazarus-md text-lazarus-gray-900 placeholder-lazarus-gray-500 border border-1 border-lazarus-gray-300 rounded w-full shadow-sm focus:shadow-md focus:border-lazarus-primary-300 disabled:text-lazarus-gray-500 disabled:bg-lazarus-gray-50"
+        className="px-[13px] py-[9px] bg-white text-biography-md text-biography-gray-900 placeholder-biography-gray-500 border border-1 border-biography-gray-300 rounded w-full shadow-sm focus:shadow-md focus:border-biography-primary-300 disabled:text-biography-gray-500 disabled:bg-biography-gray-50"
         onChange={handleDateChange}
         value={dateValue}
         maxLength={10}
         placeholder="mm-dd-yyyy"
       />
       {error && (
-        <p className="pt-1.5 text-lazarus-sm text-lazarus-error-500">{error}</p>
+        <p className="pt-1.5 text-biography-sm text-biography-error-500">
+          {error}
+        </p>
       )}
     </div>
   )

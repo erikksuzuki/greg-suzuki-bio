@@ -5,7 +5,7 @@ import { PostImage } from '../../../components/blog/Post'
 export enum ContentfulFontSize {
   Small = 'text-sm',
   Base = 'text-base',
-  Blog = 'text-lazarus-lg font-normal',
+  Blog = 'text-biography-lg font-normal',
   Large = 'text-lg',
   XLarge = 'text-xl',
 }
@@ -38,7 +38,7 @@ const customMarkdownOptions = (
   },
   renderNode: {
     [BLOCKS.HEADING_2]: (node: any, children: any) => (
-      <h2 className="text-lazarus-display-xs text-lazarus-gray-900 mt-8 mb-4 font-semibold">
+      <h2 className="text-biography-display-xs text-biography-gray-900 mt-8 mb-4 font-semibold">
         {children}
       </h2>
     ),

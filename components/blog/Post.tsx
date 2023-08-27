@@ -106,7 +106,7 @@ const Post = (post: PostProps) => {
         truncate={post.truncate}
         postHeroImage={findHeaderImage(post)}
       />
-      <div className="border-t my-6 py-6 mx-auto max-w-3xl text-lazarus-gray-600">
+      <div className="border-t my-6 py-6 mx-auto max-w-3xl text-biography-gray-600">
         <AvatarLabelGroup
           avatarUrl={avatarUrl}
           text={post.fields.author.fields?.name}

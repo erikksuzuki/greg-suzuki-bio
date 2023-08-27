@@ -28,7 +28,7 @@ const Modal = ({ show, onClose, children }: ModalProps) => {
     <div
       onClick={onClickBackdrop}
       ref={modalWrapperRef}
-      className="fixed z-40 top-0 left-0 w-full h-full flex items-center justify-center bg-lazarus-gray-700 bg-opacity-70"
+      className="fixed z-40 top-0 left-0 w-full h-full flex items-center justify-center bg-biography-gray-700 bg-opacity-70"
     >
       <div className="p-4">{children}</div>
     </div>
@@ -55,12 +55,12 @@ const ModalHeader = ({ onClose, title, subtitle, icon }: any) => {
       <div className="px-4 pt-5">
         {icon && <FeaturedIcon>{icon}</FeaturedIcon>}
         {title && (
-          <h3 className="text-lazarus-lg text-lazarus-gray-900 font-semibold">
+          <h3 className="text-biography-lg text-biography-gray-900 font-semibold">
             {title}
           </h3>
         )}
         {subtitle && (
-          <p className="text-lazarus-sm text-lazarus-gray-600 pt-1">
+          <p className="text-biography-sm text-biography-gray-600 pt-1">
             {subtitle}
           </p>
         )}

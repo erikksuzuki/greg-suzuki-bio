@@ -20,7 +20,7 @@ const FauxCheckbox = ({
 }: FauxCheckboxProps) => {
   const borderClass = classnames({
     'p-[15px] bg-white border border-gray-200': !active,
-    'p-[14px] bg-lazarus-primary-50 border-2 border-lazarus-primary-500':
+    'p-[14px] bg-biography-primary-50 border-2 border-biography-primary-500':
       active,
   })
 
@@ -33,10 +33,10 @@ const FauxCheckbox = ({
       <div className="flex-grow flex flex-row justify-start items-start gap-x-3 text-left">
         {icon && <i className="block ">{icon}</i>}
 
-        <div className="text-lazarus-sm">
+        <div className="text-biography-sm">
           <p
             className={`font-medium ${
-              active ? 'text-lazarus-primary-800' : 'text-lazarus-gray-700'
+              active ? 'text-biography-primary-800' : 'text-biography-gray-700'
             }`}
           >
             {label}
@@ -44,7 +44,9 @@ const FauxCheckbox = ({
           {hint && (
             <p
               className={`font-normal ${
-                active ? 'text-lazarus-primary-600' : 'text-lazarus-gray-600'
+                active
+                  ? 'text-biography-primary-600'
+                  : 'text-biography-gray-600'
               }`}
             >
               {hint}
@@ -53,9 +55,9 @@ const FauxCheckbox = ({
         </div>
       </div>
       {active ? (
-        <CheckCircleSolidIcon className="flex-shrink-0 w-4 h-4 text-lazarus-primary-600" />
+        <CheckCircleSolidIcon className="flex-shrink-0 w-4 h-4 text-biography-primary-600" />
       ) : (
-        <EmptyCircleIcon className="flex-shrink-0 w-4 h-4 text-lazarus-gray-300" />
+        <EmptyCircleIcon className="flex-shrink-0 w-4 h-4 text-biography-gray-300" />
       )}
     </button>
   )

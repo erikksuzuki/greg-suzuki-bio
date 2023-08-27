@@ -20,10 +20,12 @@ const Icon = ({ loading, active }: { active: boolean; loading: boolean }) => {
   }
 
   if (active) {
-    return <CheckCircleSolidIcon className="w-4 h-4 text-lazarus-primary-600" />
+    return (
+      <CheckCircleSolidIcon className="w-4 h-4 text-biography-primary-600" />
+    )
   }
 
-  return <EmptyCircleIcon className="w-4 h-4 text-lazarus-gray-300" />
+  return <EmptyCircleIcon className="w-4 h-4 text-biography-gray-300" />
 }
 
 const CheckboxGroupIcon = ({
@@ -38,7 +40,7 @@ const CheckboxGroupIcon = ({
 }: CheckboxGroupIconProps) => {
   const borderClass = classnames({
     'p-[15px] bg-white border border-gray-200': !active,
-    'p-[14px] bg-lazarus-primary-50 border-2 border-lazarus-primary-500':
+    'p-[14px] bg-biography-primary-50 border-2 border-biography-primary-500':
       active,
   })
   return (
@@ -48,17 +50,17 @@ const CheckboxGroupIcon = ({
       <div className="flex-grow flex flex-row justify-start items-start gap-x-3">
         <i className="block ">{icon}</i>
 
-        <div className="text-lazarus-sm">
+        <div className="text-biography-sm">
           <p
             className={`font-medium ${
-              active ? 'text-lazarus-primary-800' : 'text-lazarus-gray-700'
+              active ? 'text-biography-primary-800' : 'text-biography-gray-700'
             }`}
           >
             {text}
           </p>
           <p
             className={`font-normal ${
-              active ? 'text-lazarus-primary-600' : 'text-lazarus-gray-600'
+              active ? 'text-biography-primary-600' : 'text-biography-gray-600'
             }`}
           >
             {supportingText}
@@ -67,7 +69,9 @@ const CheckboxGroupIcon = ({
             {onClick && (
               <button
                 className={`font-semibold ${
-                  active ? 'text-lazarus-primary-500' : 'text-lazarus-gray-600'
+                  active
+                    ? 'text-biography-primary-500'
+                    : 'text-biography-gray-600'
                 }`}
                 onClick={onClick}
               >
@@ -76,7 +80,7 @@ const CheckboxGroupIcon = ({
             )}
             {onClickEdit && (
               <button
-                className="font-semibold text-lazarus-primary-700"
+                className="font-semibold text-biography-primary-700"
                 onClick={onClickEdit}
               >
                 Edit
@@ -84,7 +88,7 @@ const CheckboxGroupIcon = ({
             )}
             {onClickRemove && (
               <button
-                className="font-semibold text-lazarus-primary-700"
+                className="font-semibold text-biography-primary-700"
                 onClick={onClickRemove}
               >
                 Remove
