@@ -25,16 +25,20 @@ export default function MyDocument({ emotionStyleTags }: MyDocumentProps) {
         <meta name="theme-color" content={theme.palette.primary.main} />
         <link rel="icon" href="/favicon.png" />
         <link rel="shortcut icon" href="/favicon.png" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />{' '}
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Josefin+Sans:wght@700&family=Questrial&display=swap"
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;600&display=swap"
           rel="stylesheet"
         />
         <meta name="emotion-insertion-point" content="" />
         {emotionStyleTags}
       </Head>
-      <body>
+      <body className="font-biography-paragraph">
         <Main />
         <NextScript />
       </body>

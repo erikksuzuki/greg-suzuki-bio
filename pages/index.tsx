@@ -8,7 +8,6 @@ import 'tiny-slider/dist/tiny-slider.css'
 
 import Lightbox, { ImagesListType } from 'react-spring-lightbox'
 import ImageCrossFade from '../components/ImageCrossFade'
-import wait from 'waait'
 import WritingPageContent from '../components/pageComponents/WritingPageContent'
 import MusicPageContent from '../components/pageComponents/MusicPageContent'
 import HomePageContent from '../components/pageComponents/HomePageContent'

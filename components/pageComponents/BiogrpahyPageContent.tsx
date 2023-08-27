@@ -1,6 +1,13 @@
 const BiographyPageContent = () => {
   return (
-    <div className="block p-4">
+    <div className="block p-4 md:px-8">
+      <p className="mb-4 tracking-[6px]">
+        <span className="font-bold text-[#00ccff]">Biography</span> » 1959 » -
+        Present
+      </p>
+      <div className="inline-block float-left max-w-[45%] md:max-w-[30%] lg:max-w-[24%] mt-[6px] mr-[18px] mb-[6px]">
+        <img src="/biopicthumb.jpg" className="float-left h-auto" />
+      </div>
       <p className="block mb-4">
         Masayuki Gregory Suzuki was born in 1959 in Tokyo. In 1979, at the age
         of 19, he moved to Los Angeles, California, and attended The Los Angeles

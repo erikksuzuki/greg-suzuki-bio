@@ -1,6 +1,6 @@
 const MusicPageContent = () => {
   return (
-    <div className="block p-4">
+    <div className="block p-4 md:px-8">
       <section>
         <h1 className="block mb-4">2005 - After Sunset</h1>
         <p className="block mb-4">

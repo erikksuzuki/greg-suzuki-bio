@@ -6,9 +6,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        title: ['Josefin Sans', 'sans-serif'],
-        subtitle: ['Questrial', 'sans-serif'],
-        display: ['Inter', 'sans-serif'],
+        'biography-paragraph': ['Maven Pro', 'sans-serif'],
+        'biography-display': ['Cinzel', 'sans-serif'],
+        'biography-code': ['Fira Code', 'sans-serif'],
       },
       fontSize: {
         'biography-display-2xl': ['4.5rem', '5.625rem'],

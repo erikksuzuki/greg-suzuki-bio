@@ -1,6 +1,10 @@
 const WritingPageContent = () => {
   return (
-    <div className="block p-4">
+    <div className="block p-4 md:px-8">
+      <p className="mb-4 tracking-[6px]">
+        <span className="font-bold text-[#00ffaa]">Writing</span> » Books » The
+        Show Must Go On
+      </p>
       <div className="flex flex-col md:flex-row">
         <div className="w-full pr-4 min-w-[45%] lg:min-w-[35%] xl:min-w-[25%]">
           <img src="/theshowmustgoonbig.png" className="w-full h-auto" />
