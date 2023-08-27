@@ -2,12 +2,6 @@
 
 import dynamic from 'next/dynamic'
 import { NextSeo } from 'next-seo'
-import { getHomeHeroSectionBlurb } from '../lib/clients/contentful/homeHeroSectionBlurb'
-import { Dispatch, SetStateAction, useEffect, useState } from 'react'
-import {
-  ContentfulFontSize,
-  renderContentfulDocument,
-} from '../lib/clients/contentful/document'
 import { useQueryParam, StringParam, withDefault } from 'use-query-params'
 
 import 'tiny-slider/dist/tiny-slider.css'
@@ -20,6 +14,7 @@ import MusicPageContent from '../components/pageComponents/MusicPageContent'
 import HomePageContent from '../components/pageComponents/HomePageContent'
 import BiographyPageContent from '../components/pageComponents/BiogrpahyPageContent'
 import NavigationDesktop from '../components/navigationComponents/NavigationDesktop'
+import { useState } from 'react'
 
 const TinySlider: any = dynamic(() => import('tiny-slider-react'), {
   ssr: false,
