@@ -144,7 +144,6 @@ export const PhotoModal = ({ page }: any) => {
     zoom: true,
     close: true,
     counter: true,
-    bgOpacity: 0.5,
   }
   return (
     <Gallery
