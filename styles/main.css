@@ -65,14 +65,18 @@
 .pswp__default-caption {
   bottom: 0px !important;
   font-size: 16px !important;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.6) !important;
   padding: 10px 20px !important;
 }
 
 .pswp__items {
-  background-color: rgba(0, 0, 0, 0.5) !important;
+  background-color: rgba(0, 0, 0, 0.6) !important;
 }
 
 .pswp__img {
   border-radius: 8px;
+}
+
+.pswp__bg {
+  background-color: rgba(0, 0, 0, 0.6) !important;
 }
