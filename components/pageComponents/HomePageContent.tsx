@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const HomePageContent = () => {
   return (
     <div className="block p-4 md:px-8">
@@ -22,18 +24,25 @@ const HomePageContent = () => {
       </p>
       <p className="block mb-8 leading-relaxed">Find Greg Suzuki at: </p>
       <div className="w-full block relative left-[-6px]">
-        <img
-          className="inline-block w-[100px] mr-1"
-          src="/layoutpics/facebook.png"
-        />
+        <Link href="https://www.facebook.com/masayuki.g.suzuki" target="_blank">
+          <img
+            className="inline-block w-[100px] mr-1"
+            src="/layoutpics/facebook.png"
+          />
+        </Link>
         <img
           className="inline-block h-[50px] mr-2"
           src="/layoutpics/socialmdivider.png"
         />
-        <img
-          className="inline-block w-[100px]"
-          src="/layoutpics/linkedin.png"
-        />
+        <Link
+          href="https://www.linkedin.com/in/greg-suzuki-88092813/"
+          target="_blank"
+        >
+          <img
+            className="inline-block w-[100px]"
+            src="/layoutpics/linkedin.png"
+          />
+        </Link>
       </div>
     </div>
   )

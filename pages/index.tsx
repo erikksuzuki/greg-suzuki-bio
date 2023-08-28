@@ -11,7 +11,7 @@ import ImageCrossFade from '../components/ImageCrossFade'
 import WritingPageContent from '../components/pageComponents/WritingPageContent'
 import MusicPageContent from '../components/pageComponents/MusicPageContent'
 import HomePageContent from '../components/pageComponents/HomePageContent'
-import BiographyPageContent from '../components/pageComponents/BiogrpahyPageContent'
+import BiographyPageContent from '../components/pageComponents/BiographyPageContent'
 import NavigationDesktop from '../components/navigationComponents/NavigationDesktop'
 import { useState } from 'react'
 
@@ -138,20 +138,34 @@ export const PhotoModal = ({ page }: any) => {
       router.replace(`/?page=${page}`)
     })
   }
+  const options = {
+    arrowPrev: true,
+    arrowNext: true,
+    zoom: true,
+    close: true,
+    counter: true,
+    bgOpacity: 0.5,
+  }
   return (
-    <Gallery id="sideImages" onBeforeOpen={onBeforeOpen}>
+    <Gallery
+      withCaption
+      id="sideImages"
+      onBeforeOpen={onBeforeOpen}
+      options={options}
+    >
       {sideImages.map((image: any) => {
         return (
           <Item
+            caption={image.alt}
             key={`sideImages-image-${image.index}`}
             id={`image-${image.index}`}
             original={image.src}
             thumbnail={image.src}
-            width="1280"
-            height="960"
+            width="960"
+            height="720"
           >
             {({ ref, open }: any) => (
-              <img ref={ref} onClick={open} src={image.src} />
+              <img ref={ref} onClick={open} src={image.src} alt={image.alt} />
             )}
           </Item>
         )
@@ -165,11 +179,9 @@ export function BackgroundImage({ backgroundImage }: any) {
 }
 
 export default function Home() {
-  const [currentImageIndex, setCurrentIndex] = useState(0)
   const [backgroundImage, setBackgroundImage] = useState<string>(
     '/backgrounds/home.jpg'
   )
-  const [lightboxOpen, setLightboxOpen] = useState(false)
   const [page, setPage] = useQueryParam('page', withDefault(StringParam, 'bio'))
 
   return (
