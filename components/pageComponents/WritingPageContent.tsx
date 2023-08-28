@@ -1,13 +1,16 @@
+const WritingPageHeader = () => (
+  <p className="tracking-[6px]">
+    <span className="font-bold text-[#00ffaa]">Writing</span> » Books » The Show
+    Must Go On
+  </p>
+)
+
 const WritingPageContent = () => {
   return (
-    <div className="block p-4 md:px-8">
-      <p className="mb-4 tracking-[6px]">
-        <span className="font-bold text-[#00ffaa]">Writing</span> » Books » The
-        Show Must Go On
-      </p>
+    <div className="block p-4 md:px-8 leading-relaxed">
       <img
         src="/theshowmustgoonbig.png"
-        className="inline-block float-left pr-4 max-w-[45%] md:max-w-[45%] lg:max-w-[40%]"
+        className="inline-block float-left pr-4 max-w-[45%] md:max-w-[45%] lg:max-w-[26.5%]"
       />
       <p className="block mb-4">
         <span className="font-bold">The Show Must Go On</span>
@@ -63,3 +66,4 @@ const WritingPageContent = () => {
 }
 
 export default WritingPageContent
+export { WritingPageHeader }

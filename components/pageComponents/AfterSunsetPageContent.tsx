@@ -1,12 +1,12 @@
 import Link from 'next/link'
 
-const MusicPageHeader = () => (
+const AfterSunsetPageHeader = () => (
   <p className="tracking-[6px]">
     <span className="font-bold text-[#ffcc00]">Music</span> » Albums
   </p>
 )
 
-const MusicPageContent = () => {
+const AfterSunsetPageContent = () => {
   return (
     <div className="block p-4 md:px-8">
       <Link href="/?page=aftersunset">
@@ -49,5 +49,5 @@ const MusicPageContent = () => {
   )
 }
 
-export default MusicPageContent
-export { MusicPageHeader }
+export default AfterSunsetPageContent
+export { AfterSunsetPageHeader }

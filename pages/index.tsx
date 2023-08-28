@@ -8,16 +8,27 @@ import 'tiny-slider/dist/tiny-slider.css'
 
 // import Lightbox from 'react-spring-lightbox'
 import ImageCrossFade from '../components/ImageCrossFade'
-import WritingPageContent from '../components/pageComponents/WritingPageContent'
-import MusicPageContent from '../components/pageComponents/MusicPageContent'
-import HomePageContent from '../components/pageComponents/HomePageContent'
-import BiographyPageContent from '../components/pageComponents/BiographyPageContent'
+import WritingPageContent, {
+  WritingPageHeader,
+} from '../components/pageComponents/WritingPageContent'
+import MusicPageContent, {
+  MusicPageHeader,
+} from '../components/pageComponents/MusicPageContent'
+import HomePageContent, {
+  HomePageHeader,
+} from '../components/pageComponents/HomePageContent'
+import BiographyPageContent, {
+  BiographyPageHeader,
+} from '../components/pageComponents/BiographyPageContent'
 import NavigationDesktop from '../components/navigationComponents/NavigationDesktop'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import 'photoswipe/dist/photoswipe.css'
 
 import { Gallery, Item } from 'react-photoswipe-gallery'
+import AfterSunsetPageContent, {
+  AfterSunsetPageHeader,
+} from '../components/pageComponents/AfterSunsetPageContent'
 
 const TinySlider: any = dynamic(() => import('tiny-slider-react'), {
   ssr: false,
@@ -174,27 +185,47 @@ export const PhotoModal = ({ page }: any) => {
 }
 
 export function BackgroundImage({ backgroundImage }: any) {
-  return <ImageCrossFade imgUrl={backgroundImage} width={1728} height={864} />
+  return (
+    <ImageCrossFade imgUrl={backgroundImage ?? ''} width={1728} height={864} />
+  )
 }
 
 export default function Home() {
-  const [backgroundImage, setBackgroundImage] = useState<string>(
-    '/backgrounds/home.jpg'
-  )
-  const [page, setPage] = useQueryParam(
-    'page',
-    withDefault(StringParam, 'home')
-  )
+  const [backgroundImage, setBackgroundImage] = useState<string | null>(null)
+  const [page, setPage] = useState<string | null>(null)
+  const [urlQuery, setUrlQuery] = useQueryParam('page')
+
+  useEffect(() => {
+    if (urlQuery === 'home') setPage('home')
+    if (urlQuery === 'bio') setPage('bio')
+    if (urlQuery === 'music') setPage('music')
+    if (urlQuery === 'aftersunset') setPage('aftersunset')
+    if (urlQuery === 'journeys') setPage('journeys')
+    if (urlQuery === 'writing') setPage('writing')
+  }, [urlQuery])
+
+  useEffect(() => {
+    if (page === 'home') setBackgroundImage('/backgrounds/home.jpg')
+    if (page === 'bio') setBackgroundImage('/backgrounds/biography.jpg')
+
+    if (page === 'music') setBackgroundImage('/backgrounds/music.jpg')
+    if (page === 'aftersunset') setBackgroundImage('/backgrounds/music.jpg')
+    if (page === 'journeys') setBackgroundImage('/backgrounds/music.jpg')
+
+    if (page === 'writing') setBackgroundImage('/backgrounds/books.jpg')
+  }, [page])
 
   return (
     <>
       <NextSeo />
       <div className="fixed top-0 left-0 w-[100vw] h-[100vh]">
         <div className="relative h-[100vh]">
-          <BackgroundImage backgroundImage={backgroundImage} />
+          <BackgroundImage
+            backgroundImage={page ? backgroundImage : '/backgrounds/home.jpg'}
+          />
         </div>
       </div>
-      <div className="absolute block md:flex md:flex-col md:justify-center md:items-center top-0 bg-[rgba(0,0,0,0.3)] w-full h-[100vh] text-white px-4">
+      <div className="absolute block md:flex md:flex-col md:justify-center md:items-center top-0 bg-[rgba(0,0,0,0.3)] w-full min-h-[100vh] text-white px-4">
         <section className="">
           <header className="block w-full max-w-screen-xl mx-auto">
             <div className="w-full max-w-[540px] relative">
@@ -203,24 +234,45 @@ export default function Home() {
           </header>
           <div className="max-w-screen-xl mx-auto">
             <div className="flex flex-col md:flex-row w-full ">
-              <nav className="flex-grow max-h-[490px]">
+              <nav className="flex-grow max-h-[495px]">
                 <NavigationDesktop
-                  setPage={setPage}
+                  setPage={setUrlQuery}
                   setBackgroundImage={setBackgroundImage}
                 />
               </nav>
-              <main
-                className="flex-grow md:max-h-[490px] md:overflow-scroll"
-                style={{
-                  boxShadow: '2px -1px 19px 0px rgba(0,0,0,0.75) inset',
-                }}
-              >
-                {page === 'home' && <HomePageContent />}
-                {page === 'bio' && <BiographyPageContent />}
-                {page === 'music' && <MusicPageContent />}
-                {page === 'writing' && <WritingPageContent />}
+
+              <main className="flex flex-col flex-grow md:max-h-[495px]">
+                <aside className="p-4 md:max-h-[495px]">
+                  {page === null && <HomePageHeader />}
+                  {page === 'home' && <HomePageHeader />}
+                  {page === 'bio' && <BiographyPageHeader />}
+
+                  {page === 'music' && <MusicPageHeader />}
+                  {page === 'aftersunset' && <AfterSunsetPageHeader />}
+                  {page === 'journeys' && <AfterSunsetPageHeader />}
+
+                  {page === 'writing' && <WritingPageHeader />}
+                </aside>
+
+                <div
+                  className="flex-grow md:overflow-scroll md:max-h-[441px]"
+                  style={{
+                    boxShadow: '2px -1px 19px 0px rgba(0,0,0,0.75) inset',
+                  }}
+                >
+                  {page === null && <HomePageContent />}
+                  {page === 'home' && <HomePageContent />}
+                  {page === 'bio' && <BiographyPageContent />}
+
+                  {page === 'music' && <MusicPageContent />}
+                  {page === 'aftersunset' && <AfterSunsetPageContent />}
+                  {page === 'journeys' && <AfterSunsetPageContent />}
+
+                  {page === 'writing' && <WritingPageContent />}
+                </div>
               </main>
-              <aside className="p-4 min-w-[172px] max-h-[490px] overflow-y-hidden">
+
+              <aside className="p-4 min-w-[172px] max-h-[495px] overflow-y-hidden">
                 <PhotoSliderVerticle />
               </aside>
             </div>

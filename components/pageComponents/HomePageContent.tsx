@@ -1,11 +1,14 @@
 import Link from 'next/link'
 
+const HomePageHeader = () => (
+  <p className="tracking-[6px]">
+    <span className="font-bold text-[#eeaaff]">Home</span> » News & Contact
+  </p>
+)
+
 const HomePageContent = () => {
   return (
     <div className="block p-4 md:px-8">
-      <p className="mb-4 tracking-[6px]">
-        <span className="font-bold text-[#eeaaff]">Home</span> » News & Contact
-      </p>
       <p className="block mb-8 leading-relaxed">
         Welcome to Greg Suzuki's personal website. This is a home for his love
         of music and expression, dedication to art and entertainment and his
@@ -49,3 +52,4 @@ const HomePageContent = () => {
 }
 
 export default HomePageContent
+export { HomePageHeader }
