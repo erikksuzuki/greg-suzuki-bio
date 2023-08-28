@@ -182,7 +182,10 @@ export default function Home() {
   const [backgroundImage, setBackgroundImage] = useState<string>(
     '/backgrounds/home.jpg'
   )
-  const [page, setPage] = useQueryParam('page', withDefault(StringParam, 'bio'))
+  const [page, setPage] = useQueryParam(
+    'page',
+    withDefault(StringParam, 'home')
+  )
 
   return (
     <>
