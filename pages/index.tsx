@@ -29,6 +29,12 @@ import { Gallery, Item } from 'react-photoswipe-gallery'
 import AfterSunsetPageContent, {
   AfterSunsetPageHeader,
 } from '../components/pageComponents/AfterSunsetPageContent'
+import JourneysPageContent, {
+  JourneysPageHeader,
+} from '../components/pageComponents/JourneysPageContent'
+import MusicPlayer from '../components/musicComponents/MusicPlayer'
+
+var ReactFitText = require('react-fittext')
 
 const TinySlider: any = dynamic(() => import('tiny-slider-react'), {
   ssr: false,
@@ -232,6 +238,7 @@ export default function Home() {
               <img src="/title.png" className="w-full relative" />
             </div>
           </header>
+
           <div className="max-w-screen-xl mx-auto">
             <div className="flex flex-col md:flex-row w-full ">
               <nav className="flex-grow max-h-[495px]">
@@ -240,43 +247,41 @@ export default function Home() {
                   setBackgroundImage={setBackgroundImage}
                 />
               </nav>
-
-              <main className="flex flex-col flex-grow md:max-h-[495px]">
-                <aside className="p-4 md:max-h-[495px]">
-                  {page === null && <HomePageHeader />}
-                  {page === 'home' && <HomePageHeader />}
-                  {page === 'bio' && <BiographyPageHeader />}
-
-                  {page === 'music' && <MusicPageHeader />}
-                  {page === 'aftersunset' && <AfterSunsetPageHeader />}
-                  {page === 'journeys' && <AfterSunsetPageHeader />}
-
-                  {page === 'writing' && <WritingPageHeader />}
-                </aside>
-
-                <div
-                  className="flex-grow md:overflow-scroll md:max-h-[441px]"
-                  style={{
-                    boxShadow: '2px -1px 19px 0px rgba(0,0,0,0.75) inset',
-                  }}
-                >
-                  {page === null && <HomePageContent />}
-                  {page === 'home' && <HomePageContent />}
-                  {page === 'bio' && <BiographyPageContent />}
-
-                  {page === 'music' && <MusicPageContent />}
-                  {page === 'aftersunset' && <AfterSunsetPageContent />}
-                  {page === 'journeys' && <AfterSunsetPageContent />}
-
-                  {page === 'writing' && <WritingPageContent />}
-                </div>
-              </main>
-
+              <ReactFitText compressor={6.0}>
+                <main className="flex flex-col flex-grow md:max-h-[495px]">
+                  <aside className="p-4 md:max-h-[495px]">
+                    {page === null && <HomePageHeader />}
+                    {page === 'home' && <HomePageHeader />}
+                    {page === 'bio' && <BiographyPageHeader />}
+                    {page === 'music' && <MusicPageHeader />}
+                    {page === 'aftersunset' && <AfterSunsetPageHeader />}
+                    {page === 'journeys' && <JourneysPageHeader />}
+                    {page === 'writing' && <WritingPageHeader />}
+                  </aside>
+                  <div
+                    className='flex-grow md:overflow-scroll md:max-h-[441px] shadow-["2px -1px 19px 0px rgba(0,0,0,0.75) inset"]'
+                    style={{
+                      boxShadow: '2px -1px 19px 0px rgba(0,0,0,0.75) inset',
+                    }}
+                  >
+                    {page === null && <HomePageContent />}
+                    {page === 'home' && <HomePageContent />}
+                    {page === 'bio' && <BiographyPageContent />}
+                    {page === 'music' && <MusicPageContent />}
+                    {page === 'aftersunset' && <AfterSunsetPageContent />}
+                    {page === 'journeys' && <JourneysPageContent />}
+                    {page === 'writing' && <WritingPageContent />}
+                  </div>
+                </main>
+              </ReactFitText>
               <aside className="p-4 min-w-[172px] max-h-[495px] overflow-y-hidden">
                 <PhotoSliderVerticle />
               </aside>
             </div>
           </div>
+          <footer>
+            <MusicPlayer />
+          </footer>
         </section>
         <div className="overflow-hidden w-[1px] h-[1px]">
           <PhotoModal page={page} />

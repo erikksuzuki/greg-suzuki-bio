@@ -8,7 +8,7 @@ const HomePageHeader = () => (
 
 const HomePageContent = () => {
   return (
-    <div className="block p-4 md:px-8">
+    <div className="block p-4 md:px-8 font-[16px]">
       <p className="block mb-8 leading-relaxed">
         Welcome to Greg Suzuki's personal website. This is a home for his love
         of music and expression, dedication to art and entertainment and his
@@ -29,7 +29,7 @@ const HomePageContent = () => {
       <div className="w-full block relative left-[-6px]">
         <Link href="https://www.facebook.com/masayuki.g.suzuki" target="_blank">
           <img
-            className="inline-block w-[100px] mr-1"
+            className="inline-block w-[6em] mr-1"
             src="/layoutpics/facebook.png"
           />
         </Link>
@@ -42,7 +42,7 @@ const HomePageContent = () => {
           target="_blank"
         >
           <img
-            className="inline-block w-[100px]"
+            className="inline-block w-[6em]"
             src="/layoutpics/linkedin.png"
           />
         </Link>
