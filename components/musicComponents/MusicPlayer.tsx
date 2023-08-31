@@ -1,59 +1,10 @@
-import { useEffect, useState } from 'react'
-import useSound from 'use-sound' // for handling the sound
+import { useContext, useEffect, useState } from 'react'
+import { MusicContext, MusicProviderTypes } from '../context/music'
 
-const MusicPlayer = ({ songTitle = 'Desert', fileName = 'desert.mp3' }) => {
-  const Song = require(`../../public/aftersunsetmusic/${fileName}`)
-  const [isPlaying, setIsPlaying] = useState(false)
-  const [play, { pause, duration, sound }] = useSound(Song)
-
-  const [currTime, setCurrTime] = useState({
-    min: '',
-    sec: '',
-  }) // current position of the audio in minutes and seconds
-
-  const [seconds, setSeconds] = useState() // current position of the audio in seconds
-
-  const sec = Math.floor(Number(duration) / 1000).toString()
-  const min = Math.floor(Number(sec) / 60).toString()
-  const secRemain = Math.floor(Number(sec) % 60)
-  const time = {
-    min: min,
-    sec: secRemain,
-  }
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (sound) {
-        setSeconds(sound.seek([])) // setting the seconds state with the current state
-        const min = Math.floor(sound.seek([]) / 60).toString()
-        const sec = Math.floor(sound.seek([]) % 60).toString()
-        setCurrTime({
-          min,
-          sec,
-        })
-      }
-    }, 1000)
-    return () => clearInterval(interval)
-  }, [sound])
-
-  function playingButton() {
-    if (isPlaying) {
-      pause() // this will pause the audio
-      setIsPlaying(false)
-    } else {
-      play() // this will play the audio
-      setIsPlaying(true)
-    }
-  }
-
-  function formatTimeDigits(time: string | number) {
-    const timeTwoDigits = `0${time}`
-    if (time.toString().length < 2) {
-      return timeTwoDigits
-    } else {
-      return time
-    }
-  }
+const MusicPlayer = () => {
+  const musicContext = useContext<MusicProviderTypes>(MusicContext)
+  const { isPlaying, songTitle, currentTime, time } = musicContext.state
+  const { playingButton, formatTimeDigits } = musicContext
 
   return (
     <div className="pt-8 pl-5">
@@ -71,8 +22,9 @@ const MusicPlayer = ({ songTitle = 'Desert', fileName = 'desert.mp3' }) => {
           </div>
 
           <div className="">
-            {formatTimeDigits(currTime.min)}:{formatTimeDigits(currTime.sec)} /{' '}
-            {formatTimeDigits(time.min)}:{formatTimeDigits(time.sec)}
+            {formatTimeDigits(currentTime.min)}:
+            {formatTimeDigits(currentTime.sec)} / {formatTimeDigits(time.min)}:
+            {formatTimeDigits(time.sec)}
           </div>
           {!isPlaying ? (
             <div className="cursor-pointer" onClick={playingButton}>
