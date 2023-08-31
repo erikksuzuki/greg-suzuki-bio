@@ -14,7 +14,7 @@ export const defaultMusicValues: MusicProviderTypes = {
     },
   },
   setSongTitle: () => void 0,
-  setSongFile: () => void 0,
-  playingButton: () => void 0,
+  togglePlayPause: () => void 0,
+  stopCurrentPlayback: () => 0,
   formatTimeDigits: () => void 0,
 }

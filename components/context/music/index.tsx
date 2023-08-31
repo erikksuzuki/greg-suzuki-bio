@@ -11,22 +11,167 @@ export interface MusicProviderTypes {
     time: any
   }
   setSongTitle: any
-  setSongFile: any
-  playingButton: any
+  togglePlayPause: any
+  stopCurrentPlayback: any
   formatTimeDigits: any
 }
 
 export const MusicContext =
   createContext<MusicProviderTypes>(defaultMusicValues)
 export default function MusicProvider(props: any) {
-  const [songTitle, setSongTitle] = useState('Desert')
-  const [songFile, setSongFile] = useState('desert.mp3')
-  const [fileName, setFileName] = useState('desert.mp3')
+  const [autoplay, setAutoplay] = useState(false)
+  const [songTitle, setSongTitle] = useState('Sunrise')
 
-  const Song = require(`../../../public/aftersunsetmusic/${fileName}`)
+  const SunsetAudio = require('../../../public/aftersunsetmusic/sunset.mp3')
+  const KimonoAudio = require('../../../public/aftersunsetmusic/kimono.mp3')
+  const NightTownAudio = require('../../../public/aftersunsetmusic/nighttown.mp3')
+  const ShiningEyesAudio = require('../../../public/aftersunsetmusic/shiningeyes.mp3')
+  const ThunderRainAudio = require('../../../public/aftersunsetmusic/thunderrain.mp3')
+  const DesertAudio = require('../../../public/aftersunsetmusic/desert.mp3')
+  const RainyMoonAudio = require('../../../public/aftersunsetmusic/rainymoon.mp3')
+  const SunriseAudio = require('../../../public/aftersunsetmusic/sunrise.mp3')
 
   const [isPlaying, setIsPlaying] = useState(false)
-  const [play, { pause, duration, sound }] = useSound(Song)
+
+  const [
+    playSunset,
+    {
+      pause: pauseSunset,
+      stop: stopSunset,
+      duration: durationSunset,
+      sound: soundSunset,
+    },
+  ] = useSound(SunsetAudio)
+  const [
+    playKimono,
+    {
+      pause: pauseKimono,
+      stop: stopKimono,
+      duration: durationKimono,
+      sound: soundKimono,
+    },
+  ] = useSound(KimonoAudio)
+  const [
+    playNightTown,
+    {
+      pause: pauseNightTown,
+      stop: stopNightTown,
+      duration: durationNightTown,
+      sound: soundNightTown,
+    },
+  ] = useSound(NightTownAudio)
+  const [
+    playShiningEyes,
+    {
+      pause: pauseShiningEyes,
+      stop: stopShiningEyes,
+      duration: durationShiningEyes,
+      sound: soundShiningEyes,
+    },
+  ] = useSound(ShiningEyesAudio)
+  const [
+    playThunderRain,
+    {
+      pause: pauseThunderRain,
+      stop: stopThunderRain,
+      duration: durationThunderRain,
+      sound: soundThunderRain,
+    },
+  ] = useSound(ThunderRainAudio)
+  const [
+    playDesert,
+    {
+      pause: pauseDesert,
+      stop: stopDesert,
+      duration: durationDesert,
+      sound: soundDesert,
+    },
+  ] = useSound(DesertAudio)
+  const [
+    playRainyMoon,
+    {
+      pause: pauseRainyMoon,
+      stop: stopRainyMoon,
+      duration: durationRainyMoon,
+      sound: soundRainyMoon,
+    },
+  ] = useSound(RainyMoonAudio)
+  const [
+    playSunrise,
+    {
+      pause: pauseSunrise,
+      stop: stopSunrise,
+      duration: durationSunrise,
+      sound: soundSunrise,
+    },
+  ] = useSound(SunriseAudio)
+
+  const musicArray: any = [
+    {
+      title: 'Sunset',
+      play: playSunset,
+      pause: pauseSunset,
+      stop: stopSunset,
+      duration: durationSunset,
+      sound: soundSunset,
+    },
+    {
+      title: 'Kimono',
+      play: playKimono,
+      pause: pauseKimono,
+      stop: stopKimono,
+      duration: durationKimono,
+      sound: soundKimono,
+    },
+    {
+      title: 'Night Town',
+      play: playNightTown,
+      pause: pauseNightTown,
+      stop: stopNightTown,
+      duration: durationNightTown,
+      sound: soundNightTown,
+    },
+    {
+      title: 'Shining Eyes',
+      play: playShiningEyes,
+      pause: pauseShiningEyes,
+      stop: stopShiningEyes,
+      duration: durationShiningEyes,
+      sound: soundShiningEyes,
+    },
+    {
+      title: 'Thunder Rain',
+      play: playThunderRain,
+      pause: pauseThunderRain,
+      stop: stopThunderRain,
+      duration: durationThunderRain,
+      sound: soundThunderRain,
+    },
+    {
+      title: 'Desert',
+      play: playDesert,
+      pause: pauseDesert,
+      stop: stopDesert,
+      duration: durationDesert,
+      sound: soundDesert,
+    },
+    {
+      title: 'Rainy Moon',
+      play: playRainyMoon,
+      pause: pauseRainyMoon,
+      stop: stopRainyMoon,
+      duration: durationRainyMoon,
+      sound: soundRainyMoon,
+    },
+    {
+      title: 'Sunrise',
+      play: playSunrise,
+      pause: pauseSunrise,
+      stop: stopSunrise,
+      duration: durationSunrise,
+      sound: soundSunrise,
+    },
+  ]
 
   const [currentTime, setCurrentTime] = useState({
     min: '',
@@ -35,7 +180,24 @@ export default function MusicProvider(props: any) {
 
   const [seconds, setSeconds] = useState() // current position of the audio in seconds
 
-  const sec = Math.floor(Number(duration) / 1000).toString()
+  const playCurrentSongTitle = () =>
+    musicArray.filter((song: any) => song.title === songTitle)[0].play()
+
+  const pauseCurrentSongTitle = () =>
+    musicArray.filter((song: any) => song.title === songTitle)[0].pause()
+
+  const stopCurrentSongTitle = () =>
+    musicArray.filter((song: any) => song.title === songTitle)[0].stop()
+
+  const getCurrentSongDuration = musicArray.filter(
+    (song: any) => song.title === songTitle
+  )[0].duration
+
+  const getCurrentSongSound = musicArray.filter(
+    (song: any) => song.title === songTitle
+  )[0].sound
+
+  const sec = Math.floor(Number(getCurrentSongDuration) / 1000).toString()
   const min = Math.floor(Number(sec) / 60).toString()
   const secRemain = Math.floor(Number(sec) % 60)
   const time = {
@@ -45,10 +207,10 @@ export default function MusicProvider(props: any) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (sound) {
-        setSeconds(sound.seek([])) // setting the seconds state with the current state
-        const min = Math.floor(sound.seek([]) / 60).toString()
-        const sec = Math.floor(sound.seek([]) % 60).toString()
+      if (getCurrentSongSound) {
+        setSeconds(getCurrentSongSound.seek([])) // setting the seconds state with the current state
+        const min = Math.floor(getCurrentSongSound.seek([]) / 60).toString()
+        const sec = Math.floor(getCurrentSongSound.seek([]) % 60).toString()
         setCurrentTime({
           min,
           sec,
@@ -56,24 +218,41 @@ export default function MusicProvider(props: any) {
       }
     }, 1000)
     return () => clearInterval(interval)
-  }, [sound])
+  }, [songTitle])
 
-  function playingButton() {
+  function togglePlayPause() {
     if (isPlaying) {
-      pause() // this will pause the audio
+      pauseCurrentSongTitle() // this will pause the audio
       setIsPlaying(false)
     } else {
-      play() // this will play the audio
+      playCurrentSongTitle()
       setIsPlaying(true)
     }
   }
 
-  useEffect(() => {
-    pause()
-    setSongTitle(songTitle)
+  function stopCurrentPlayback() {
+    stopCurrentSongTitle() // this will pause the audio
     setIsPlaying(false)
-    setFileName(songFile)
-  }, [songTitle, songFile])
+  }
+
+  function changeSong() {
+    musicArray
+      .filter((song: any) => song.title !== songTitle)
+      .forEach((song: any) => {
+        song.stop()
+      })
+    if (autoplay) {
+      playCurrentSongTitle()
+      setIsPlaying(true)
+    } else {
+      setIsPlaying(false)
+    }
+  }
+
+  useEffect(() => {
+    changeSong()
+    setSongTitle(songTitle)
+  }, [songTitle])
 
   function formatTimeDigits(time: string | number) {
     const timeTwoDigits = `0${time}`
@@ -92,8 +271,8 @@ export default function MusicProvider(props: any) {
       time: time,
     },
     setSongTitle,
-    setSongFile,
-    playingButton,
+    togglePlayPause,
+    stopCurrentPlayback,
     formatTimeDigits,
   }
   return (

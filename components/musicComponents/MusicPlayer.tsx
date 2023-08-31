@@ -4,7 +4,7 @@ import { MusicContext, MusicProviderTypes } from '../context/music'
 const MusicPlayer = () => {
   const musicContext = useContext<MusicProviderTypes>(MusicContext)
   const { isPlaying, songTitle, currentTime, time } = musicContext.state
-  const { playingButton, formatTimeDigits } = musicContext
+  const { togglePlayPause, formatTimeDigits } = musicContext
 
   return (
     <div className="pt-8 pl-5">
@@ -27,11 +27,11 @@ const MusicPlayer = () => {
             {formatTimeDigits(time.sec)}
           </div>
           {!isPlaying ? (
-            <div className="cursor-pointer" onClick={playingButton}>
+            <div className="cursor-pointer" onClick={togglePlayPause}>
               [PLAY]
             </div>
           ) : (
-            <div className="cursor-pointer" onClick={playingButton}>
+            <div className="cursor-pointer" onClick={togglePlayPause}>
               [PAUSE]
             </div>
           )}

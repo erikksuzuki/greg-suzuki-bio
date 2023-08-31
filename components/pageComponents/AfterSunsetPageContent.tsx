@@ -12,8 +12,7 @@ const AfterSunsetPageHeader = () => (
 const AfterSunsetPageContent = () => {
   const musicContext = useContext<MusicProviderTypes>(MusicContext)
   const { isPlaying, songTitle, currentTime, time } = musicContext.state
-  const { setSongTitle, setSongFile, playingButton, formatTimeDigits } =
-    musicContext
+  const { setSongTitle, togglePlayPause, formatTimeDigits } = musicContext
   return (
     <div className="block p-4 md:px-8">
       <section className="block mb-10">
@@ -71,7 +70,6 @@ const AfterSunsetPageContent = () => {
               className="cursor-pointer mb-1"
               onClick={() => {
                 setSongTitle('Sunset')
-                setSongFile('sunset.mp3')
               }}
             >
               1.{' '}
@@ -83,7 +81,6 @@ const AfterSunsetPageContent = () => {
               className="cursor-pointer mb-1"
               onClick={() => {
                 setSongTitle('Kimono')
-                setSongFile('kimono.mp3')
               }}
             >
               2.{' '}
@@ -95,7 +92,6 @@ const AfterSunsetPageContent = () => {
               className="cursor-pointer mb-1"
               onClick={() => {
                 setSongTitle('Night Town')
-                setSongFile('nighttown.mp3')
               }}
             >
               3.{' '}
@@ -107,7 +103,6 @@ const AfterSunsetPageContent = () => {
               className="cursor-pointer mb-1"
               onClick={() => {
                 setSongTitle('Shining Eyes')
-                setSongFile('shiningeyes.mp3')
               }}
             >
               4.{' '}
@@ -119,7 +114,6 @@ const AfterSunsetPageContent = () => {
               className="cursor-pointer mb-1"
               onClick={() => {
                 setSongTitle('Thunder Rain')
-                setSongFile('thunderrain.mp3')
               }}
             >
               5.{' '}
@@ -131,7 +125,6 @@ const AfterSunsetPageContent = () => {
               className="cursor-pointer mb-1"
               onClick={() => {
                 setSongTitle('Desert')
-                setSongFile('desert.mp3')
               }}
             >
               6.{' '}
@@ -143,7 +136,6 @@ const AfterSunsetPageContent = () => {
               className="cursor-pointer mb-1"
               onClick={() => {
                 setSongTitle('Rainy Moon')
-                setSongFile('rainymoon.mp3')
               }}
             >
               7.{' '}
@@ -155,7 +147,6 @@ const AfterSunsetPageContent = () => {
               className="cursor-pointer mb-1"
               onClick={() => {
                 setSongTitle('Sunrise')
-                setSongFile('sunrise.mp3')
               }}
             >
               8.{' '}
@@ -189,11 +180,11 @@ const AfterSunsetPageContent = () => {
             </div>
             <p className="mb-2 text-biography-sm">
               {!isPlaying ? (
-                <span className="cursor-pointer" onClick={playingButton}>
+                <span className="cursor-pointer" onClick={togglePlayPause}>
                   [PLAY]
                 </span>
               ) : (
-                <span className="cursor-pointer" onClick={playingButton}>
+                <span className="cursor-pointer" onClick={togglePlayPause}>
                   [PAUSE]
                 </span>
               )}
