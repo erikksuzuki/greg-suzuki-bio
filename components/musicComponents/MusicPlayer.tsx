@@ -1,15 +1,17 @@
 import { useContext, useEffect, useState } from 'react'
 import { MusicContext, MusicProviderTypes } from '../context/music'
+import Link from 'next/link'
 
 const MusicPlayer = () => {
   const musicContext = useContext<MusicProviderTypes>(MusicContext)
   const { isPlaying, songTitle, currentTime, time } = musicContext.state
-  const { togglePlayPause, formatTimeDigits } = musicContext
+  const { togglePlayPause, stopCurrentPlayback, formatTimeDigits } =
+    musicContext
 
   return (
     <div className="pt-8 pl-5">
       <div className="flex flex-row justify-between">
-        <div className="flex flex-row gap-10 text-biography-sm text-[rgba(255,255,255,0.7)]">
+        <div className="flex flex-row gap-8 text-biography-sm text-[rgba(255,255,255,0.7)]">
           <div className="relative">
             {!isPlaying ? 'Track Selected' : 'Now Playing'}: Greg Suzuki -{' '}
             {songTitle}{' '}
@@ -35,6 +37,12 @@ const MusicPlayer = () => {
               [PAUSE]
             </div>
           )}
+          <div className="cursor-pointer" onClick={stopCurrentPlayback}>
+            [STOP]
+          </div>
+          <div className="cursor-pointer" onClick={stopCurrentPlayback}>
+            <Link href="/?page=music">[ALL TRACKS]</Link>
+          </div>
         </div>
         <div className="text-biography-sm text-[rgba(255,255,255,0.4)] pr-4">
           2004 - 2023 © Masayuki Greg Suzuki. All rights reserved

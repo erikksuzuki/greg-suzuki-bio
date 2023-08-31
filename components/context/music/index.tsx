@@ -19,7 +19,7 @@ export interface MusicProviderTypes {
 export const MusicContext =
   createContext<MusicProviderTypes>(defaultMusicValues)
 export default function MusicProvider(props: any) {
-  const [autoplay, setAutoplay] = useState(false)
+  const autoplay = true
   const [songTitle, setSongTitle] = useState('Sunrise')
 
   const SunsetAudio = require('../../../public/aftersunsetmusic/sunset.mp3')
@@ -31,6 +31,7 @@ export default function MusicProvider(props: any) {
   const RainyMoonAudio = require('../../../public/aftersunsetmusic/rainymoon.mp3')
   const SunriseAudio = require('../../../public/aftersunsetmusic/sunrise.mp3')
 
+  const [isLoading, setIsLoading] = useState(true)
   const [isPlaying, setIsPlaying] = useState(false)
 
   const [
@@ -218,7 +219,7 @@ export default function MusicProvider(props: any) {
       }
     }, 1000)
     return () => clearInterval(interval)
-  }, [songTitle])
+  }, [songTitle, musicArray])
 
   function togglePlayPause() {
     if (isPlaying) {
@@ -241,7 +242,7 @@ export default function MusicProvider(props: any) {
       .forEach((song: any) => {
         song.stop()
       })
-    if (autoplay) {
+    if (autoplay && !isLoading) {
       playCurrentSongTitle()
       setIsPlaying(true)
     } else {
@@ -250,9 +251,17 @@ export default function MusicProvider(props: any) {
   }
 
   useEffect(() => {
-    changeSong()
+    if (!isLoading) changeSong()
     setSongTitle(songTitle)
-  }, [songTitle])
+  }, [songTitle, isLoading])
+
+  useEffect(() => {
+    if (currentTime.sec === '' || currentTime.min === '') {
+      setIsLoading(true)
+    } else {
+      setIsLoading(false)
+    }
+  }, [currentTime])
 
   function formatTimeDigits(time: string | number) {
     const timeTwoDigits = `0${time}`
