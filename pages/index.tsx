@@ -3,11 +3,12 @@ import { useRouter } from 'next/router'
 import dynamic from 'next/dynamic'
 import { NextSeo } from 'next-seo'
 import { useQueryParam, StringParam, withDefault } from 'use-query-params'
+import { useEffect, useState } from 'react'
+import Link from 'next/link'
 
-import 'tiny-slider/dist/tiny-slider.css'
+import NavigationDesktop from '../components/navigationComponents/NavigationDesktop'
 
-// import Lightbox from 'react-spring-lightbox'
-import ImageCrossFade from '../components/ImageCrossFade'
+// PAGE CONTENTS
 import WritingPageContent, {
   WritingPageHeader,
 } from '../components/pageComponents/WritingPageContent'
@@ -20,20 +21,18 @@ import HomePageContent, {
 import BiographyPageContent, {
   BiographyPageHeader,
 } from '../components/pageComponents/BiographyPageContent'
-import NavigationDesktop from '../components/navigationComponents/NavigationDesktop'
-import { useEffect, useState } from 'react'
-
-import 'photoswipe/dist/photoswipe.css'
-
-import { Gallery, Item } from 'react-photoswipe-gallery'
 import AfterSunsetPageContent, {
   AfterSunsetPageHeader,
 } from '../components/pageComponents/AfterSunsetPageContent'
 import JourneysPageContent, {
   JourneysPageHeader,
 } from '../components/pageComponents/JourneysPageContent'
+
+import ImageCrossFade from '../components/ImageCrossFade'
+import 'tiny-slider/dist/tiny-slider.css'
+import { Gallery, Item } from 'react-photoswipe-gallery'
+import 'photoswipe/dist/photoswipe.css'
 import MusicPlayer from '../components/musicComponents/MusicPlayer'
-import Link from 'next/link'
 
 var ReactFitText = require('react-fittext')
 
@@ -248,33 +247,31 @@ export default function Home() {
                   setBackgroundImage={setBackgroundImage}
                 />
               </nav>
-              <ReactFitText compressor={6.0}>
-                <main className="flex flex-col flex-grow md:max-h-[495px]">
-                  <aside className="p-4 md:max-h-[495px]">
-                    {page === null && <HomePageHeader />}
-                    {page === 'home' && <HomePageHeader />}
-                    {page === 'bio' && <BiographyPageHeader />}
-                    {page === 'music' && <MusicPageHeader />}
-                    {page === 'aftersunset' && <AfterSunsetPageHeader />}
-                    {page === 'journeys' && <JourneysPageHeader />}
-                    {page === 'writing' && <WritingPageHeader />}
-                  </aside>
-                  <div
-                    className='flex-grow md:overflow-scroll md:max-h-[441px] shadow-["2px -1px 19px 0px rgba(0,0,0,0.75) inset"]'
-                    style={{
-                      boxShadow: '2px -1px 19px 0px rgba(0,0,0,0.75) inset',
-                    }}
-                  >
-                    {page === null && <HomePageContent />}
-                    {page === 'home' && <HomePageContent />}
-                    {page === 'bio' && <BiographyPageContent />}
-                    {page === 'music' && <MusicPageContent />}
-                    {page === 'aftersunset' && <AfterSunsetPageContent />}
-                    {page === 'journeys' && <JourneysPageContent />}
-                    {page === 'writing' && <WritingPageContent />}
-                  </div>
-                </main>
-              </ReactFitText>
+              <main className="flex flex-col flex-grow md:max-h-[495px]">
+                <aside className="p-4 md:max-h-[495px]">
+                  {page === null && <HomePageHeader />}
+                  {page === 'home' && <HomePageHeader />}
+                  {page === 'bio' && <BiographyPageHeader />}
+                  {page === 'music' && <MusicPageHeader />}
+                  {page === 'aftersunset' && <AfterSunsetPageHeader />}
+                  {page === 'journeys' && <JourneysPageHeader />}
+                  {page === 'writing' && <WritingPageHeader />}
+                </aside>
+                <div
+                  className='flex-grow md:overflow-scroll md:max-h-[441px] shadow-["2px -1px 19px 0px rgba(0,0,0,0.75) inset"]'
+                  style={{
+                    boxShadow: '2px -1px 19px 0px rgba(0,0,0,0.75) inset',
+                  }}
+                >
+                  {page === null && <HomePageContent />}
+                  {page === 'home' && <HomePageContent />}
+                  {page === 'bio' && <BiographyPageContent />}
+                  {page === 'music' && <MusicPageContent />}
+                  {page === 'aftersunset' && <AfterSunsetPageContent />}
+                  {page === 'journeys' && <JourneysPageContent />}
+                  {page === 'writing' && <WritingPageContent />}
+                </div>
+              </main>
               <aside className="p-4 min-w-[172px] max-h-[495px] overflow-y-hidden">
                 <PhotoSliderVerticle />
               </aside>
