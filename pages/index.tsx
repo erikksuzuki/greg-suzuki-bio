@@ -33,6 +33,7 @@ import JourneysPageContent, {
   JourneysPageHeader,
 } from '../components/pageComponents/JourneysPageContent'
 import MusicPlayer from '../components/musicComponents/MusicPlayer'
+import Link from 'next/link'
 
 var ReactFitText = require('react-fittext')
 
@@ -279,8 +280,17 @@ export default function Home() {
               </aside>
             </div>
           </div>
-          <footer>
-            <MusicPlayer />
+          <footer className="pt-8 flex flex-row justify-between">
+            <div className="flex flex-row gap-6">
+              <MusicPlayer />
+              <div className="cursor-pointer text-biography-sm text-[rgba(255,255,255,0.7)]">
+                <Link href="/?page=music">[ALL TRACKS]</Link>
+              </div>
+            </div>
+
+            <div className="text-biography-sm text-[rgba(255,255,255,0.4)] pr-4">
+              2004 - 2023 © Masayuki Greg Suzuki. All rights reserved
+            </div>
           </footer>
         </section>
         <div className="overflow-hidden w-[1px] h-[1px]">

@@ -3,18 +3,16 @@ import { DefaultSeoProps } from 'next-seo'
 // const featureFlagEnabled = true;
 
 const DEFAULT_SEO: DefaultSeoProps = {
-  title:
-    'Curated Studio Rentals and Workspace Solutions for Remote Workers in Cambodia',
+  title: 'Home Page',
   description:
-    'Exclusive workspace solutions and studio apartments with flexible rentals. Live and work with other remote workers in Phnom Penh, Cambodia.',
+    "Greg Suzuki's personal website. This is a home for his love of music and expression, dedication to art and entertainment and his vision for new projects.",
   // dangerouslySetAllPagesToNoFollow: !featureFlagEnabled,
   // dangerouslySetAllPagesToNoIndex: !featureFlagEnabled,
   openGraph: {
     type: 'website',
-    url: 'https://biographyrooms.com',
-    title: 'gregsuzuki.bio',
-    description:
-      'Curated Studio Rentals and Workspace Solutions for Remote Workers in Cambodia',
+    url: 'https://Gregsuzuki.bio',
+    title: 'Gregsuzuki.bio',
+    description: "Greg Suzuki's personal website.",
     images: [
       {
         url: '',
