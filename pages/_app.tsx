@@ -1,3 +1,4 @@
+'use client'
 import Head from 'next/head'
 import { AppProps } from 'next/app'
 import Script from 'next/script'
@@ -26,6 +27,7 @@ export interface MyAppProps extends AppProps {
 export default function MyApp(props: MyAppProps) {
   const isBlogPage = useRouter().pathname.slice(0, 5) === '/blog'
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
+
   return (
     <>
       <Script

@@ -2,11 +2,19 @@ import { useContext, useEffect, useState } from 'react'
 import { MusicContext, MusicProviderTypes } from '../context/music'
 import Link from 'next/link'
 
-const MusicPlayer = () => {
+const MusicPlayer = ({ autoplay }: { autoplay: boolean }) => {
   const musicContext = useContext<MusicProviderTypes>(MusicContext)
   const { isPlaying, songTitle, currentTime, time } = musicContext.state
-  const { togglePlayPause, stopCurrentPlayback, formatTimeDigits } =
-    musicContext
+  const {
+    setAutoplay,
+    togglePlayPause,
+    stopCurrentPlayback,
+    formatTimeDigits,
+  } = musicContext
+
+  useEffect(() => {
+    autoplay && setAutoplay(true)
+  })
 
   return (
     <div className="pl-5 flex flex-row gap-6 text-biography-sm text-[rgba(255,255,255,0.7)]">

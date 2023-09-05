@@ -10,7 +10,7 @@ const WritingPageContent = () => {
     <div className="block p-4 md:px-8 leading-relaxed">
       <img
         src="/theshowmustgoonbig.png"
-        className="inline-block float-left pr-4 max-w-[45%] md:max-w-[45%] lg:max-w-[26.5%]"
+        className="block mb-8 md:mb-0 w-full md:inline-block md:float-left md:pr-4 md:max-w-[45%] lg:max-w-[26.5%]"
       />
       <p className="block mb-4">
         <span className="font-bold">The Show Must Go On</span>

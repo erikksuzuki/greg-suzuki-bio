@@ -23,24 +23,24 @@ const AfterSunsetPageContent = () => {
           to create an exotic, exciting, and new-age jazz album.
         </p>
       </section>
-      <section className="w-full flex flex-row mb-2">
+      <section className="w-full block md:flex md:flex-row mb-2">
         <img
           src="/musicpics/sunsetthumb1.png"
-          className="inline-block w-full md:w-[135px] mb-4 md:mb-0 mr-4"
+          className="inline-block w-[45%] md:w-[135px] mb-0 mr-[10%] md:mr-4"
         />
         <img
           src="/musicpics/sunsetthumb2.png"
-          className="inline-block w-full md:w-[135px] mb-4 md:mb-0 mr-4"
+          className="inline-block w-[45%] md:w-[135px] mb-0 mr-0 md:mr-4"
         />
         <p className="mb-4 leading-relaxed">
           After Sunset was released in 2005 and was Greg's first re-emergence
           into the music scene since his hiatus in 1986. The project marks a
           reunion between him and his former mentor, Dr. Osamu Kitajima. » View
-          all album covers
+          all album covers.
         </p>
       </section>
-      <section className="w-full flex flex-row mb-12">
-        <p className="block mb-4 leading-relaxed">
+      <section className="w-full flex flex-col md:flex-row mb-6 md:mb-12">
+        <p className="block mb-8 leading-relaxed">
           Among the contributing musicians are Kazu Matsui, friend and prominent
           bamboo flute player in major Hollywood films, internationally renowned
           Erhu player Karen Han whose contributions include 'The Last Emperor'
@@ -48,7 +48,7 @@ const AfterSunsetPageContent = () => {
         </p>
         <img
           src="/musicpics/artiststhumb.png"
-          className="w-full md:w-[245px] mb-4 md:mb-0 ml-0 md:ml-4"
+          className="w-full md:w-[245px] mb-4 ml-0 md:ml-4"
         />
       </section>
       <section>
@@ -62,7 +62,7 @@ const AfterSunsetPageContent = () => {
           Renarto, who are all in heaven.{' '}
         </p>
       </section>
-      <section className="w-full flex flex-row justify-between mt-12 mb-8">
+      <section className="w-full hidden md:flex md:flex-row justify-between mt-12 mb-8">
         <div className="">
           <div className="mb-2">Select Track</div>
           <ul>

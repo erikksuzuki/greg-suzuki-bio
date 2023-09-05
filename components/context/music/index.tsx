@@ -10,6 +10,7 @@ export interface MusicProviderTypes {
     currentTime: any
     time: any
   }
+  setAutoplay: any
   setSongTitle: any
   togglePlayPause: any
   stopCurrentPlayback: any
@@ -19,7 +20,7 @@ export interface MusicProviderTypes {
 export const MusicContext =
   createContext<MusicProviderTypes>(defaultMusicValues)
 export default function MusicProvider(props: any) {
-  const autoplay = true
+  const [autoplay, setAutoplay] = useState(false)
   const [songTitle, setSongTitle] = useState('Sunrise')
 
   const SunsetAudio = require('../../../public/aftersunsetmusic/sunset.mp3')
@@ -279,6 +280,7 @@ export default function MusicProvider(props: any) {
       currentTime: currentTime,
       time: time,
     },
+    setAutoplay,
     setSongTitle,
     togglePlayPause,
     stopCurrentPlayback,

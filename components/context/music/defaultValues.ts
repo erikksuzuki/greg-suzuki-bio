@@ -13,6 +13,7 @@ export const defaultMusicValues: MusicProviderTypes = {
       sec: '00',
     },
   },
+  setAutoplay: () => void 0,
   setSongTitle: () => void 0,
   togglePlayPause: () => void 0,
   stopCurrentPlayback: () => 0,

@@ -15,13 +15,13 @@ const JourneysPageContent = () => {
   const { setSongTitle, togglePlayPause, formatTimeDigits } = musicContext
   return (
     <div className="block p-4 md:px-8">
-      <section className="block mb-10">
+      <section className="block mb-4 md:mb-10">
         <p className="block leading-relaxed">
           Journeys is Greg's tentatively-titled second album will soon be
           available on Spotify.
         </p>
       </section>
-      <section className="w-full flex flex-row mb-2">
+      <section className="w-full md:flex md:flex-row mb-2">
         <img
           src="/musicpics/blankcdhalf.png"
           className="inline-block w-full md:w-[265px] mb-4 md:mb-0 mr-4"
@@ -33,7 +33,7 @@ const JourneysPageContent = () => {
           by Dr. Osamu Kitajima. Album art and official title coming soon.
         </p>
       </section>
-      <section className="w-full flex flex-row justify-between mt-12 mb-8">
+      <section className="hidden w-full md:flex md:flex-row justify-between mt-12 mb-8">
         <div className="">
           <div className="mb-2">Track list:</div>
           <ul>
