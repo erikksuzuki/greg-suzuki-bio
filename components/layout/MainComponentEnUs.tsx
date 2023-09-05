@@ -83,10 +83,10 @@ const MainComponentEnUs = (props: any) => {
         </div>
       </div>
       <div className="absolute block md:flex md:flex-col md:justify-center md:items-center top-0 bg-[rgba(0,0,0,0.3)] w-full min-h-[100vh] text-white px-4">
-        <section className="">
+        <section>
           <header className="block w-full max-w-screen-xl mx-auto">
             <ResizableWrapper>
-              <div className="w-[42%] relative">
+              <div className="p-4 md:p-0 mt-4 md:mt-0 w-full md:w-[42%] relative">
                 <img src="/title.png" className="w-full relative" />
               </div>
             </ResizableWrapper>
@@ -102,6 +102,7 @@ const MainComponentEnUs = (props: any) => {
                   />
                 </ResizableWrapper>
               </nav>
+
               <main className="w-full md:w-[75.5%]">
                 <ResizableWrapper compressor={6.0}>
                   <aside className="p-[1em] md:px-[2em]">
@@ -131,6 +132,7 @@ const MainComponentEnUs = (props: any) => {
                   </div>
                 </ResizableWrapper>
               </main>
+
               <aside className="w-full md:w-[14%] overflow-y-hidden">
                 <ResizableWrapper compressor={0.7}>
                   <div className="overflow-y-hidden h-auto md:h-[21em] p-[0.7em]">
@@ -166,7 +168,6 @@ const MainComponentEnUs = (props: any) => {
                 }
               }}
             </Media>
-
             <div className="text-[0.8em] text-[rgba(255,255,255,0.4)] pr-4">
               2004 - 2023 © Masayuki Greg Suzuki. All rights reserved
             </div>

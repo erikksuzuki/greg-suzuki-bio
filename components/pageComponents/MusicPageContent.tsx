@@ -13,7 +13,7 @@ const MusicPageContent = () => {
         <section className="flex flex-col md:flex-row cursor-pointer shadow-xl bg-[rgba(0,0,0,0.3)] hover:bg-[rgba(100,100,100,0.2)] p-[1em] mb-[1em]">
           <img
             src="/musicpics/albumsunset.jpg"
-            className="w-full md:w-[10em] mb-[1em] md:mb-0 mr-[1em] self-center"
+            className="w-full md:w-[10em] mb-[1em] md:mb-0 md:mr-[1em] self-center"
           />
           <div className="leading-relaxed">
             <h1 className="font-bold block mb-[1.5em] leading-relaxed">
@@ -32,7 +32,7 @@ const MusicPageContent = () => {
         <section className="flex flex-col md:flex-row cursor-pointer shadow-xl bg-[rgba(0,0,0,0.3)] hover:bg-[rgba(100,100,100,0.2)] p-[1em] mb-[1em]">
           <img
             src="/musicpics/albumjourneys.png"
-            className="w-full md:w-[10em] mb-[1em] md:mb-0 mr-[1em] self-center"
+            className="w-full md:w-[10em] mb-[1em] md:mb-0 md:mr-[1em] self-center"
           />
           <div className="leading-relaxed">
             <h1 className="font-bold block mb-[1.5em] leading-relaxed">
