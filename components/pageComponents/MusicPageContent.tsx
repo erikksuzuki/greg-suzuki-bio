@@ -1,42 +1,44 @@
 import Link from 'next/link'
 
 const MusicPageHeader = () => (
-  <p className="tracking-[6px]">
+  <p className="tracking-[0.375em]">
     <span className="font-bold text-[#ffcc00]">Music</span> » Albums
   </p>
 )
 
 const MusicPageContent = () => {
   return (
-    <div className="block p-4 md:px-8">
+    <div className="block p-[1em] md:px-[2em]">
       <Link href="/?page=aftersunset">
-        <section className="cursor-pointer shadow-xl bg-[rgba(0,0,0,0.3)] hover:bg-[rgba(100,100,100,0.2)] p-4 mb-4">
+        <section className="flex flex-col md:flex-row cursor-pointer shadow-xl bg-[rgba(0,0,0,0.3)] hover:bg-[rgba(100,100,100,0.2)] p-[1em] mb-[1em]">
           <img
             src="/musicpics/albumsunset.jpg"
-            className="float-left w-full md:w-[135px] mb-4 md:mb-0 mr-4"
+            className="w-full md:w-[10em] mb-[1em] md:mb-0 mr-[1em] self-center"
           />
-          <h1 className="font-bold block mb-6 leading-relaxed">
-            2005 - After Sunset
-          </h1>
-          <p className="block mb-4 leading-relaxed">
-            After Sunset is the result of a collaborative effort of various
-            musicians, produced by Dr. Osamu Kitajima and composed and directed
-            by Greg Suzuki.
-          </p>
+          <div className="leading-relaxed">
+            <h1 className="font-bold block mb-[1.5em] leading-relaxed">
+              2005 - After Sunset
+            </h1>
+            <p className="block mb-[1em] leading-relaxed">
+              After Sunset is the result of a collaborative effort of various
+              musicians, produced by Dr. Osamu Kitajima and composed and
+              directed by Greg Suzuki.
+            </p>
+          </div>
         </section>
       </Link>
 
       <Link href="/?page=journeys">
-        <section className="cursor-pointer shadow-xl bg-[rgba(0,0,0,0.3)] hover:bg-[rgba(100,100,100,0.2)] p-4 mb-4">
+        <section className="flex flex-col md:flex-row cursor-pointer shadow-xl bg-[rgba(0,0,0,0.3)] hover:bg-[rgba(100,100,100,0.2)] p-[1em] mb-[1em]">
           <img
             src="/musicpics/albumjourneys.png"
-            className="float-left w-full md:w-[135px] mb-4 md:mb-0 mr-4"
+            className="w-full md:w-[10em] mb-[1em] md:mb-0 mr-[1em] self-center"
           />
           <div className="leading-relaxed">
-            <h1 className="font-bold block mb-6 leading-relaxed">
+            <h1 className="font-bold block mb-[1.5em] leading-relaxed">
               2013 - Journeys (Tentative Title)
             </h1>
-            <p className="block mb-4 leading-relaxed">
+            <p className="block mb-[1em] leading-relaxed">
               Originally drafted using only simple iPhone applications, Greg's
               second musical project saw the introduction of virtual instruments
               and a continuation of blending digital and organic sounds.

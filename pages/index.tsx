@@ -1,5 +1,6 @@
 'use client'
 
+import { NextSeo } from 'next-seo'
 import MainComponentEnUs from '../components/layout/MainComponentEnUs'
 import { theme as tailwindTheme } from '../tailwind.config'
 import ReactBreakpoints from 'react-breakpoints'
@@ -18,6 +19,7 @@ export default function Home() {
   }
   return (
     <ReactBreakpoints breakpoints={formatBreakpoints()} debounceResize={true}>
+      <NextSeo />
       <MainComponentEnUs />
     </ReactBreakpoints>
   )

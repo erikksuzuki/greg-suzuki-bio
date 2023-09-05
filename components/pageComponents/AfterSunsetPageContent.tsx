@@ -3,7 +3,7 @@ import { useContext } from 'react'
 import { MusicContext, MusicProviderTypes } from '../context/music'
 
 const AfterSunsetPageHeader = () => (
-  <p className="tracking-[6px]">
+  <p className="tracking-[0.375em]">
     <span className="font-bold text-[#ffcc00]">Music</span> » Albums » After
     Sunset
   </p>
@@ -14,8 +14,8 @@ const AfterSunsetPageContent = () => {
   const { isPlaying, songTitle, currentTime, time } = musicContext.state
   const { setSongTitle, togglePlayPause, formatTimeDigits } = musicContext
   return (
-    <div className="block p-4 md:px-8">
-      <section className="block mb-10">
+    <div className="block p-[1em] md:px-[2em]">
+      <section className="block mb-[2.5em]">
         <p className="block leading-relaxed">
           After Sunset is the result of a collaborative effort of various
           musicians, produced by Dr. Osamu Kitajima and composed and directed by
@@ -23,24 +23,24 @@ const AfterSunsetPageContent = () => {
           to create an exotic, exciting, and new-age jazz album.
         </p>
       </section>
-      <section className="w-full block md:flex md:flex-row mb-2">
+      <section className="w-full md:flex md:flex-row mb-[0.5em]">
         <img
           src="/musicpics/sunsetthumb1.png"
-          className="inline-block w-[45%] md:w-[135px] mb-0 mr-[10%] md:mr-4"
+          className="block inline-block w-[47.5%] md:w-[15%] mr-[5%] md:mr-[2.5%] self-center"
         />
         <img
           src="/musicpics/sunsetthumb2.png"
-          className="inline-block w-[45%] md:w-[135px] mb-0 mr-0 md:mr-4"
+          className="block inline-block w-[47.5%] md:w-[15%] mr-[0] md:mr-[2.5%] self-center"
         />
-        <p className="mb-4 leading-relaxed">
+        <p className="w-full md:w-[65%] mb-[1em] leading-relaxed">
           After Sunset was released in 2005 and was Greg's first re-emergence
           into the music scene since his hiatus in 1986. The project marks a
           reunion between him and his former mentor, Dr. Osamu Kitajima. » View
           all album covers.
         </p>
       </section>
-      <section className="w-full flex flex-col md:flex-row mb-6 md:mb-12">
-        <p className="block mb-8 leading-relaxed">
+      <section className="w-full md:flex md:flex-row mb-[1.5em] md:mb-[4em]">
+        <p className="w-full md:w-[63%] mb-[2em] leading-relaxed">
           Among the contributing musicians are Kazu Matsui, friend and prominent
           bamboo flute player in major Hollywood films, internationally renowned
           Erhu player Karen Han whose contributions include 'The Last Emperor'
@@ -48,7 +48,7 @@ const AfterSunsetPageContent = () => {
         </p>
         <img
           src="/musicpics/artiststhumb.png"
-          className="w-full md:w-[245px] mb-4 ml-0 md:ml-4"
+          className="w-full md:w-[32%] mb-[1em] md:ml-[5%]"
         />
       </section>
       <section>

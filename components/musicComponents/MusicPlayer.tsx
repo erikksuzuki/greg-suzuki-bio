@@ -17,7 +17,7 @@ const MusicPlayer = ({ autoplay }: { autoplay: boolean }) => {
   })
 
   return (
-    <div className="pl-5 flex flex-row gap-6 text-biography-sm text-[rgba(255,255,255,0.7)]">
+    <div className="pl-5 flex flex-row gap-6 text-[0.8em] text-[rgba(255,255,255,0.7)]">
       <div className="relative">
         {!isPlaying ? 'Track Selected' : 'Now Playing'}: Greg Suzuki -{' '}
         {songTitle}{' '}

@@ -1,5 +1,5 @@
 const BiographyPageHeader = () => (
-  <p className="tracking-[6px]">
+  <p className="tracking-[0.375em]">
     <span className="font-bold text-[#00ccff]">Biography</span> » 1959 » -
     Present
   </p>
@@ -7,7 +7,7 @@ const BiographyPageHeader = () => (
 
 const BiographyPageContent = () => {
   return (
-    <div className="block p-4 md:px-8 leading-relaxed">
+    <div className="block p-[1em] md:px-[2em] leading-relaxed">
       <div className="inline-block float-left max-w-[45%] md:max-w-[30%] lg:max-w-[19.6%] mt-[6px] mr-[18px] mb-[6px]">
         <img src="/biopicthumb.jpg" className="float-left h-auto" />
       </div>

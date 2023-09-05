@@ -210,7 +210,7 @@ export default function MusicProvider(props: any) {
   useEffect(() => {
     const interval = setInterval(() => {
       if (getCurrentSongSound) {
-        setSeconds(getCurrentSongSound.seek([])) // setting the seconds state with the current state
+        setSeconds(getCurrentSongSound.seek([]))
         const min = Math.floor(getCurrentSongSound.seek([]) / 60).toString()
         const sec = Math.floor(getCurrentSongSound.seek([]) % 60).toString()
         setCurrentTime({

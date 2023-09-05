@@ -32,7 +32,7 @@ const Photoslider = ({
       <TinySlider settings={settings}>
         {sideImages.map((image: any, index: number) => {
           return (
-            <div className="relative w-[140px]" key={`sideimage-${index}`}>
+            <div className="relative w-full" key={`sideimage-${index}`}>
               <a href={`#&gid=sideImages&pid=image-${image.index}`}>
                 <img
                   rel="lightbox[roadtrip]"
