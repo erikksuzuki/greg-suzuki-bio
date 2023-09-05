@@ -38,7 +38,7 @@ export default function MyDocument({ emotionStyleTags }: MyDocumentProps) {
         <meta name="emotion-insertion-point" content="" />
         {emotionStyleTags}
       </Head>
-      <body className="font-biography-paragraph">
+      <body className="font-biography-paragraph bg-black">
         <Main />
         <NextScript />
       </body>
