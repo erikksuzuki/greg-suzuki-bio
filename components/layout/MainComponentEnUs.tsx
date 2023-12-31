@@ -75,7 +75,7 @@ const MainComponentEnUs = (props: any) => {
 
   return (
     <>
-      <div className="fixed top-0 left-0 w-[100vw] h-[100vh]">
+      <div className="my-8 mx-6 fixed top-0 left-0 w-[100vw] h-[100vh]">
         <div className="relative h-[100vh]">
           <BackgroundImage
             backgroundImage={page ? backgroundImage : '/backgrounds/home.jpg'}
