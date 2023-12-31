@@ -168,7 +168,7 @@ const MainComponentEnUs = (props: any) => {
                 }
               }}
             </Media>
-            <div className="text-[0.8em] text-[rgba(255,255,255,0.4)] pr-4">
+            <div className="text-[0.8em] text-[rgba(255,255,255,0.4)] pr-4 pb-4 md:pb-8">
               2004 - 2023 © Masayuki Greg Suzuki. All rights reserved
             </div>
           </footer>
